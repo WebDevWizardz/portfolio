@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "TestSöhne";
+    src: url("../public/assets/font/TestSöhneBreit/test-soehne-breit-buch-kursiv.woff2");
+  }
+}
