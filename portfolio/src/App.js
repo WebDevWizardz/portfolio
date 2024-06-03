@@ -1,11 +1,10 @@
 import "./App.css";
+import { LandingPage } from "./components/landingPage/LandingPage";
 
 function App() {
   return (
     <div className="App font-display">
-      <h1 className="text-3xl">Hello world!</h1>
-      <p>hello</p>
-      <h2>hello</h2>
+      <LandingPage />
     </div>
   );
 }
