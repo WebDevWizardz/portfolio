@@ -8,3 +8,12 @@
     src: url("../public/assets/font/TestSöhneBreit/test-soehne-breit-buch-kursiv.woff2");
   }
 }
+
+.button-1 {
+  border: 1px solid darkblue;
+  border-radius: 5px;
+  padding: 5px 20px;
+}
+.button-1:hover {
+  opacity: 0.5;
+}
