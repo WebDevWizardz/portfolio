@@ -1,5 +1,7 @@
-import React from "react"
-import { NavLink } from "react-router-dom"
+import React from "react";
+import { NavLink } from "react-router-dom";
+import Hero from "./Hero";
+import Header from "./Header";
 
 function LandingPage() {
   //Docelowo będą to dane z backednu / CMS przesyłane w podobnej lub identycznej strukturze.
@@ -16,7 +18,7 @@ function LandingPage() {
         "Testing",
       ],
     },
-  }
+  };
 
   const project2 = {
     name: "NetPartners",
@@ -26,11 +28,12 @@ function LandingPage() {
       stage: "Start up",
       deliverables: ["Vision & Strategy", "Branding", "Product Design"],
     },
-  }
+  };
 
   return (
     <div className="font-display">
-      <h1>LandingPage</h1>
+      <Header />
+      <Hero />
       <NavLink to="/project" state={project1}>
         <li className="cursor-pointer hover:opacity-15">{project1.name}</li>
       </NavLink>
@@ -38,7 +41,7 @@ function LandingPage() {
         <li className="cursor-pointer hover:opacity-15">{project2.name}</li>
       </NavLink>
     </div>
-  )
+  );
 }
 
-export default LandingPage
+export default LandingPage;
