@@ -3,7 +3,7 @@ import Logo from "../Icons/Logo";
 
 function Header() {
   return (
-    <nav className="fixed z-50 w-full px-[60px] py-[40px] flex justify-between">
+    <nav className="fixed z-50 w-full  py-[20px] px-[20px] md:px-[60px] md:py-[40px] flex justify-between">
       <div className="w-[139px] h-[15,44px]">
         <Logo fill="#494B50" />
       </div>

@@ -2,6 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Hero from "./Hero";
 import Header from "./Header";
+import ProjectsSection from "./ProjectsSection";
+import InstagramSection from "./Instagram/InstagramSection";
+import ContactSection from "./ContactSection";
 
 function LandingPage() {
   //Docelowo będą to dane z backednu / CMS przesyłane w podobnej lub identycznej strukturze.
@@ -31,15 +34,18 @@ function LandingPage() {
   };
 
   return (
-    <div className="font-display">
+    <div className="font-display bg-[#fcfcfc]">
       <Header />
       <Hero />
-      <NavLink to="/project" state={project1}>
+      <ProjectsSection />
+      <InstagramSection />
+      <ContactSection />
+      {/* <NavLink to="/project" state={project1}>
         <li className="cursor-pointer hover:opacity-15">{project1.name}</li>
       </NavLink>
       <NavLink to="/project" state={project2}>
         <li className="cursor-pointer hover:opacity-15">{project2.name}</li>
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 }
