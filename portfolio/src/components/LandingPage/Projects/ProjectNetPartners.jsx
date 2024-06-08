@@ -1,6 +1,17 @@
-import React from "react";
+import React from "react"
+import { NavLink } from "react-router-dom"
 
 function ProjectSection() {
+  const project2 = {
+    name: "NetPartners",
+    imageLink: `${process.env.PUBLIC_URL}/assets/images/NetPartners/NetPartnersHero.png`,
+    description: {
+      type: ["Product"],
+      stage: "Start up",
+      deliverables: ["Vision & Strategy", "Branding", "Product Design"],
+    },
+  }
+
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="flex flex-col gap-5 md:flex-row p-4">
@@ -17,15 +28,18 @@ function ProjectSection() {
           </p>
         </div>
         <div className="w-[539px] h-[336px]">
-          <img
-            className="object-cover w-full h-full"
-            src={`${process.env.PUBLIC_URL}/assets/images/NetPartners/NetPartnersHero.png`}
-            alt="Description"
-          />
+          {/* Narazie wywołuje komponent Project przy uzyciu NavLink aby moc go stylowac -> docelowo moze sie to zmienic */}
+          <NavLink to="/project2" state={project2}>
+            <img
+              className="object-cover w-full h-full"
+              src={`${process.env.PUBLIC_URL}/assets/images/NetPartners/NetPartnersHero.png`}
+              alt="Description"
+            />
+          </NavLink>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ProjectSection;
+export default ProjectSection

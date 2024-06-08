@@ -1,7 +1,7 @@
-import React from "react";
-import ProjectPegasus from "./Projects/ProjectPegasus";
-import ProjectNetPartners from "./Projects/ProjectNetPartners";
-import ProjectBodyVibes from "./Projects/ProjectBodyVibes";
+import React from "react"
+import ProjectPegasus from "./Projects/ProjectPegasus"
+import ProjectNetPartners from "./Projects/ProjectNetPartners"
+import ProjectBodyVibes from "./Projects/ProjectBodyVibes"
 
 function ProjectsSection() {
   return (
@@ -10,7 +10,7 @@ function ProjectsSection() {
       <ProjectNetPartners />
       <ProjectBodyVibes />
     </div>
-  );
+  )
 }
 
-export default ProjectsSection;
+export default ProjectsSection
