@@ -9,12 +9,29 @@ function Header() {
         <Logo fill="#494B50" />
       </a>
       <div className="flex gap-6 text-[12px] text-[#2C2D30] cursor-pointer">
-        <Link to="work" smooth={true} duration={1500}>
+        <Link
+          className="text-bottom-line"
+          to="work"
+          smooth={true}
+          duration={1500}
+        >
           Work
         </Link>
-        <a href="https://www.instagram.com/karo.dsgn">Playground</a>
-        <a href="https://read.cv/karolinahess">Resume</a>
-        <Link to="contact" smooth={true} duration={1500}>
+        <a
+          href="https://www.instagram.com/karo.dsgn"
+          className="text-bottom-line"
+        >
+          Playground
+        </a>
+        <a href="https://read.cv/karolinahess" className="text-bottom-line">
+          Resume
+        </a>
+        <Link
+          to="contact"
+          smooth={true}
+          duration={1500}
+          className="text-bottom-line"
+        >
           Contact
         </Link>
       </div>
