@@ -28,7 +28,9 @@ function Project({ show, onClose, name, images, description }) {
       ></div>
       <div
         ref={scrollContainerRef}
-        className="absolute overflow-y-auto w-[85%] right-0 h-full p-[60px] bg-[#2E2E2E] text-white transition-transform duration-[2500ms]"
+        className={`absolute overflow-y-auto w-[85%] right-0 h-full p-[60px] bg-[#2E2E2E] text-white transform ${
+          show ? "modal-enter" : "modal-exit"
+        }`}
       >
         <button
           onClick={onClose}
@@ -59,7 +61,7 @@ function Project({ show, onClose, name, images, description }) {
           <div className="fixed flex flex-col justify-center h-full w-[50px]">
             <ScrollProgress scrollContainerRef={scrollContainerRef} />
           </div>
-          <div className="flex-1 ml-[30px]">
+          <div className="flex-1">
             {images &&
               images.map((link, index) => (
                 <img

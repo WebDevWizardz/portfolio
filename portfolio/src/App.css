@@ -17,3 +17,31 @@
 .button-1:hover {
   opacity: 0.5;
 }
+
+@keyframes slideInFromTopRight {
+  0% {
+    transform: translate(100%, -100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToTopRight {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, -100%);
+  }
+}
+
+.modal-enter {
+  animation: slideInFromTopRight 0.6s forwards;
+}
+
+.modal-exit {
+  animation: slideOutToTopRight 0.6s forwards;
+}

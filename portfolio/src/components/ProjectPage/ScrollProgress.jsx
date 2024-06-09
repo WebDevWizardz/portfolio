@@ -21,7 +21,7 @@ const ScrollProgress = ({ scrollContainerRef }) => {
   }, [scrollContainerRef])
 
   return (
-    <div className="absolute left-0 top-0 bottom-0 w-8 flex flex-col items-center justify-between p-2 h-[200px]">
+    <div className="absolute left-[-47px] top-0 bottom-0 w-8 flex flex-col items-center justify-between p-2 h-[200px]">
       <div className="text-white text-[11px]] mt-2">
         {Math.round(scrollPercentage)}%
       </div>

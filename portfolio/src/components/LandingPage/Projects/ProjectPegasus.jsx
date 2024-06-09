@@ -49,7 +49,7 @@ function ProjectSection() {
           <div className="w-[539px] h-[336px]">
             <img
               onClick={handleOpenModal}
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full cursor-pointer"
               src={`${process.env.PUBLIC_URL}/assets/images/Pegasus/PegasusHero.png`}
               alt="Description"
             />
