@@ -1,16 +1,19 @@
-import React from "react"
-import ProjectPegasus from "./Projects/ProjectPegasus"
-import ProjectNetPartners from "./Projects/ProjectNetPartners"
-import ProjectBodyVibes from "./Projects/ProjectBodyVibes"
+import React from "react";
+import ProjectPegasus from "./Projects/ProjectPegasus";
+import ProjectNetPartners from "./Projects/ProjectNetPartners";
+import ProjectBodyVibes from "./Projects/ProjectBodyVibes";
+import { Element } from "react-scroll";
 
 function ProjectsSection() {
   return (
     <div>
-      <ProjectPegasus />
-      <ProjectNetPartners />
-      <ProjectBodyVibes />
+      <Element name="work">
+        <ProjectPegasus />
+        <ProjectNetPartners />
+        <ProjectBodyVibes />
+      </Element>
     </div>
-  )
+  );
 }
 
-export default ProjectsSection
+export default ProjectsSection;
