@@ -31,7 +31,10 @@ function Project({ show, onClose, name, images, description }) {
         ref={scrollContainerRef}
         className="absolute overflow-y-auto w-[85%] right-0 h-full p-[60px] bg-[#2E2E2E] text-white transition-transform duration-[2500ms]"
       >
-        <button onClick={onClose} className="relative mb-[60px]">
+        <button
+          onClick={onClose}
+          className="relative mb-[60px] text-[14px] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer"
+        >
           Close
         </button>
         <h2 className="text-[45px] mb-[40px]">{name}</h2>
