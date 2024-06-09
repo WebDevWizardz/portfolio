@@ -1,21 +1,38 @@
-import React, { useRef } from "react"
-import { Link, useLocation } from "react-router-dom"
+import React, { useRef, useEffect } from "react"
+import { Link } from "react-router-dom"
 import ScrollProgress from "./ScrollProgress"
 
-function Project() {
-  const location = useLocation()
-  const { name, images, description } = location.state || {}
+function Project({ show, onClose, name, images, description }) {
   const scrollContainerRef = useRef(null)
 
+  useEffect(() => {
+    // Disable body scroll when modal is open
+    if (show) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+    return () => {
+      document.body.style.overflow = "auto" // Cleanup on component unmount
+    }
+  }, [show])
+
+  if (!show) {
+    return null
+  }
+
   return (
-    <div className="project w-full font-display relative">
-      <div className="bg-black opacity-50 w-full h-screen transition-opacity duration-[1000ms]"></div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div
+        className="bg-black opacity-50 fixed inset-0"
+        onClick={onClose}
+      ></div>
       <div
         ref={scrollContainerRef}
-        className="absolute overflow-y-auto top-0 right-0 h-full w-[80%] p-[60px] bg-[#2E2E2E] text-white transition-transform duration-[2500ms]"
+        className="absolute overflow-y-auto w-[85%] right-0 h-full p-[60px] bg-[#2E2E2E] text-white transition-transform duration-[2500ms]"
       >
-        <button className="relative mb-[60px]">
-          <Link to="/">Close</Link>
+        <button onClick={onClose} className="relative mb-[60px]">
+          Close
         </button>
         <h2 className="text-[45px] mb-[40px]">{name}</h2>
         <div className="overview flex w-full gap-[10px] justify-between mb-[60px]">
@@ -53,16 +70,15 @@ function Project() {
           </div>
         </div>
         <div className="flex justify-between mt-[60px]">
-          <Link to="/">
-            <button className="text-[14px] relative after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer">
-              Back to projects
-            </button>
-          </Link>
-          <Link to="/">
-            <button className="text-[14px] relative after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer">
-              Next project
-            </button>
-          </Link>
+          <button
+            onClick={onClose}
+            className="text-[14px] relative after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer"
+          >
+            Back to projects
+          </button>
+          <button className="text-[14px] relative after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer">
+            Next project
+          </button>
         </div>
       </div>
     </div>
