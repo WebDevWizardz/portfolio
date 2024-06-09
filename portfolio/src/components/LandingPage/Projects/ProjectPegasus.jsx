@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { NavLink } from "react-router-dom"
 import Project from "../../ProjectPage/Project"
 
 function ProjectSection() {
