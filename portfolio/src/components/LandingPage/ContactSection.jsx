@@ -1,22 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { Element } from "react-scroll";
 
 function ContactSection() {
   const mailContent =
     "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,...";
 
+  // Stan przechowujący pozycję kursora
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  // Funkcja do aktualizacji pozycji kursora z opóźnieniem
+  const debouncedUpdateCursorPosition = debounce((e) => {
+    setCursorPosition({ x: e.clientX, y: e.clientY });
+  }, 100);
+
+  // Funkcja do debouncingu
+  function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+
   return (
     <Element name="contact">
       <div className="bg-[#2C2D30] md:px-[60px] pb-[60px]">
         <div className="flex justify-center h-screen bg-[#2C2D30] flex-col md:px-[10%]">
-          <p className="text-[#ECECEE] text-[12px] uppercase mb-[20px]">
-            don't be shy
-          </p>
+          <p className="text-[#ECECEE] text-[12px] uppercase">don't be shy</p>
           <p className="text-[#ECECEE] text-[95px] mb-[20px]">
             Say hello
             <a
               href={`mailto:hesskarolina@gmail.com ?subject=Collaboration ${mailContent}`}
-              className="text-[16px] ml-[20px]"
+              className="text-[16px] ml-[20px] mail-emoji-hover"
             >
               (email)
             </a>
@@ -27,13 +44,13 @@ function ContactSection() {
             <span className="inline-block ml-[20px]">
               <a
                 href="https://www.linkedin.com/in/karolina-hess-793399257/"
-                className="text-[16px] block"
+                className="text-[16px] block girl-emoji-hover"
               >
                 (LinkedIn)
               </a>
               <a
                 href="https://www.instagram.com/karo.dsgn"
-                className="text-[16px] block"
+                className="text-[16px] block eyes-emoji-hover"
               >
                 (Instagram)
               </a>
