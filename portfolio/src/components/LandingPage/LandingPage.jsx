@@ -6,6 +6,9 @@ import InstagramSection from "./Instagram/InstagramSection"
 import ContactSection from "./ContactSection"
 
 function LandingPage() {
+  //fetch
+  //przekazanie danych o projektach do cpomonentów nizej.
+
   return (
     <div className="font-display bg-[#fcfcfc]">
       <Header />
