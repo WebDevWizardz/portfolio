@@ -1,28 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Element } from "react-scroll";
 
 function ContactSection() {
   const mailContent =
     "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,...";
-
-  // Stan przechowujący pozycję kursora
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
-  // Funkcja do aktualizacji pozycji kursora z opóźnieniem
-  const debouncedUpdateCursorPosition = debounce((e) => {
-    setCursorPosition({ x: e.clientX, y: e.clientY });
-  }, 100);
-
-  // Funkcja do debouncingu
-  function debounce(func, delay) {
-    let timeoutId;
-    return function (...args) {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        func.apply(this, args);
-      }, delay);
-    };
-  }
 
   return (
     <Element name="contact">
