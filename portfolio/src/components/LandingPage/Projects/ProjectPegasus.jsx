@@ -46,9 +46,11 @@ function ProjectSection() {
       />
       <div className="flex items-center justify-center h-screen">
         <div className="flex flex-col gap-5 md:flex-row p-4">
-          <div className="w-[539px] h-[336px] overflow-hidden relative project-image-container cursor-pointer">
+          <div
+            onClick={handleOpenModal}
+            className="w-[539px] h-[336px] overflow-hidden relative project-image-container cursor-pointer"
+          >
             <img
-              onClick={handleOpenModal}
               className="object-cover w-full h-full"
               src={`${process.env.PUBLIC_URL}/assets/images/Pegasus/PegasusHero.png`}
               alt="Description"
