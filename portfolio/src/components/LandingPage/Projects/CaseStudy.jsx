@@ -1,23 +1,23 @@
-import React, { useRef, useEffect } from "react"
-import ScrollProgress from "./ScrollProgress"
+import React, { useRef, useEffect } from "react";
+import ScrollProgress from "./ScrollProgress";
 
-function Project({ show, onClose, name, images, description }) {
-  const scrollContainerRef = useRef(null)
+function CaseStudy({ show, onClose, name, images, description }) {
+  const scrollContainerRef = useRef(null);
 
   useEffect(() => {
     // Disable body scroll when modal is open
     if (show) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     }
     return () => {
-      document.body.style.overflow = "auto" // Cleanup on component unmount
-    }
-  }, [show])
+      document.body.style.overflow = "auto"; // Cleanup on component unmount
+    };
+  }, [show]);
 
   if (!show) {
-    return null
+    return null;
   }
 
   return (
@@ -85,7 +85,7 @@ function Project({ show, onClose, name, images, description }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Project
+export default CaseStudy;

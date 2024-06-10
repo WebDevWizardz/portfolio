@@ -1,16 +1,15 @@
 import React from "react";
-import ProjectPegasus from "./Projects/ProjectPegasus";
-import ProjectNetPartners from "./Projects/ProjectNetPartners";
-import ProjectBodyVibes from "./Projects/ProjectBodyVibes";
+import Project from "./Projects/Project";
 import { Element } from "react-scroll";
+import { projectsData } from "./Projects/project-data";
 
 function ProjectsSection() {
   return (
     <div>
       <Element name="work">
-        <ProjectPegasus />
-        <ProjectNetPartners />
-        <ProjectBodyVibes />
+        {projectsData.map((project) => (
+          <Project projectData={project} />
+        ))}
       </Element>
     </div>
   );
