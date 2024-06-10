@@ -28,8 +28,7 @@ function Project({ show, onClose, name, images, description }) {
       ></div>
       <div
         ref={scrollContainerRef}
-        className={`absolute overflow-y-auto w-[85%] right-0 h-full p-[60px] bg-[#2E2E2E] text-white transform ${
-          show ? "modal-enter" : "modal-exit"
+        className={`absolute overflow-y-auto w-[85%] right-0 h-full p-[60px] bg-[#2E2E2E] text-white
         }`}
       >
         <button
