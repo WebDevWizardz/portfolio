@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import Project from "../../ProjectPage/Project"
+import React, { useState } from "react";
+import Project from "../../ProjectPage/Project";
 
 function ProjectSection() {
   const project1 = {
@@ -23,17 +23,17 @@ function ProjectSection() {
         "Testing",
       ],
     },
-  }
+  };
 
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = () => {
-    setShowModal(true)
-  }
+    setShowModal(true);
+  };
 
   const handleCloseModal = () => {
-    setShowModal(false)
-  }
+    setShowModal(false);
+  };
 
   return (
     <>
@@ -46,13 +46,16 @@ function ProjectSection() {
       />
       <div className="flex items-center justify-center h-screen">
         <div className="flex flex-col gap-5 md:flex-row p-4">
-          <div className="w-[539px] h-[336px]">
+          <div className="w-[539px] h-[336px] overflow-hidden relative project-image-container cursor-pointer">
             <img
               onClick={handleOpenModal}
-              className="object-cover w-full h-full cursor-pointer"
+              className="object-cover w-full h-full"
               src={`${process.env.PUBLIC_URL}/assets/images/Pegasus/PegasusHero.png`}
               alt="Description"
             />
+            <p className="project-image-container-text text-[16px]">
+              See case study
+            </p>
           </div>
           <div className="flex flex-col justify-between md:w-[320px]">
             <div>
@@ -69,7 +72,7 @@ function ProjectSection() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default ProjectSection
+export default ProjectSection;
