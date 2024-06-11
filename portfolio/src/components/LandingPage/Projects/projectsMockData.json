@@ -27,11 +27,19 @@
     "name": "NetPartners",
     "images": [
       "/assets/images/NetPartners/NetPartnersHero.png",
-      "/assets/images/Pegasus/PegasusProjectPage/4.png",
-      "/assets/images/Pegasus/PegasusProjectPage/03.png",
-      "/assets/images/Pegasus/PegasusProjectPage/5.png",
-      "/assets/images/Pegasus/PegasusProjectPage/04.png",
-      "/assets/images/Pegasus/PegasusProjectPage/6.png"
+      "/assets/images/NetPartners/01.png",
+      "/assets/images/NetPartners/02.png",
+      "/assets/images/NetPartners/03.png",
+      "/assets/images/NetPartners/04.png",
+      "/assets/images/NetPartners/05.png",
+      "/assets/images/NetPartners/06.png",
+      "/assets/images/NetPartners/07.png",
+      "/assets/images/NetPartners/08.png",
+      "/assets/images/NetPartners/09.png",
+      "/assets/images/NetPartners/10.png",
+      "/assets/images/NetPartners/11.png",
+      "/assets/images/NetPartners/12.png",
+      "/assets/images/NetPartners/13.png"
     ],
     "description": {
       "type": ["Product"],
