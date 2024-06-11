@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import CaseStudy from "./CaseStudy";
+import React, { useState } from "react"
+import CaseStudy from "./CaseStudy"
 
 function Project({ projectData }) {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   const handleOpenModal = () => {
-    setShowModal(true);
-  };
+    setShowModal(true)
+  }
 
   const handleCloseModal = () => {
-    setShowModal(false);
-  };
+    setShowModal(false)
+  }
 
   return (
     <>
@@ -45,8 +45,8 @@ function Project({ projectData }) {
             <div>
               <ul className="list-none flex gap-x-3 text-[12px] text-[#494B50] uppercase">
                 {projectData.tags.map((tag, index) => (
-                  <li>
-                    <span key={index}>{tag}</span>
+                  <li key={index}>
+                    <span>{tag}</span>
                     <span className="ml-3">
                       {index !== projectData.tags.length - 1 && "|"}
                     </span>
@@ -65,7 +65,7 @@ function Project({ projectData }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Project;
+export default Project
