@@ -9,43 +9,6 @@
   }
 }
 
-.button-1 {
-  border: 1px solid darkblue;
-  border-radius: 5px;
-  padding: 5px 20px;
-}
-.button-1:hover {
-  opacity: 0.5;
-}
-
-@keyframes slideInFromTopRight {
-  0% {
-    transform: translate(100%, -100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutToTopRight {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(100%, -100%);
-  }
-}
-
-.modal-enter {
-  animation: slideInFromTopRight 0.6s forwards;
-}
-
-.modal-exit {
-  animation: slideOutToTopRight 0.6s forwards;
-}
-
 .text-bottom-line {
   position: relative;
 }
@@ -117,10 +80,8 @@
   bottom: 40%;
   left: 50%;
   transform: translateX(-50%);
-
   opacity: 0;
   transition: bottom 0.8s ease, opacity 0.8s ease;
-
   color: #fcfcfc;
 }
 
@@ -135,4 +96,51 @@
   cursor: url("data:image/svg+xml;utf8,%3Csvg width='100' height='100' viewBox='0 0 140 140' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='140' height='140' rx='70' fill='white' fill-opacity='0.5'/%3E%3Crect x='0.5' y='0.5' width='139' height='139' rx='69.5' stroke='white'/%3E%3Cpath d='M44.168 76V64.512H49.848C53.704 64.512 56.264 66.752 56.264 70.256C56.264 73.76 53.704 76 49.848 76H44.168ZM45.672 74.672H49.848C52.824 74.672 54.712 72.928 54.712 70.256C54.712 67.568 52.824 65.84 49.832 65.84H45.672V74.672ZM59.4071 71.184V76H57.8711V64.512H65.0551C67.4551 64.512 69.1191 65.648 69.1191 67.84C69.1191 69.68 67.9031 70.816 66.0471 71.104L69.3591 76H67.5991L64.3671 71.184H59.4071ZM59.4071 69.856H64.9751C66.6071 69.856 67.6151 69.136 67.6151 67.84C67.6151 66.544 66.6071 65.84 64.9751 65.84H59.4071V69.856ZM75.4836 64.512H77.1636L83.1956 76H81.5636L79.8996 72.816H72.7476L71.0676 76H69.4356L75.4836 64.512ZM76.3316 66.016L73.4516 71.472H79.1956L76.3316 66.016ZM89.4493 64.336C92.4253 64.336 94.6173 65.808 95.4333 68.048L94.1373 68.736C93.4493 66.864 91.8173 65.712 89.4493 65.712C86.4253 65.712 84.2812 67.536 84.2812 70.24C84.2812 72.96 86.4093 74.8 89.3853 74.8C91.9613 74.8 94.1213 73.408 94.1853 71.376H88.5533V70.032H95.5453V76H94.1053V74C93.4013 75.216 91.6413 76.16 89.3853 76.176C85.5293 76.176 82.7133 73.696 82.7133 70.24C82.7133 66.784 85.5773 64.336 89.4493 64.336Z' fill='%232C2D30'/%3E%3C/svg%3E")
       70 70,
     auto;
+}
+/* CASE STUDY STYLES  */
+.case_study {
+  animation: expandFromCircle 0.8s ease-in-out forwards;
+  transform-origin: top right;
+}
+
+.case_study.closing {
+  animation: collapseToCircle 0.8s ease-in-out forwards;
+  transform-origin: top right;
+}
+
+@keyframes expandFromCircle {
+  0% {
+    clip-path: circle(0% at top right);
+    opacity: 0;
+  }
+  100% {
+    clip-path: circle(150% at top right);
+    opacity: 1;
+  }
+}
+
+@keyframes collapseToCircle {
+  0% {
+    clip-path: circle(150% at top right);
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(0% at 140% -100%);
+  }
+}
+
+/* Smooth background overlay animation */
+.background-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.5s ease-out;
+  cursor: pointer;
+}
+
+.background-overlay.closing {
+  opacity: 0;
+}
+.cover_on_close {
+  display: none;
 }

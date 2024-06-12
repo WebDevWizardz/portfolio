@@ -1,38 +1,51 @@
-import React, { useRef, useEffect } from "react";
-import ScrollProgress from "./ScrollProgress";
+import React, { useRef, useEffect, useState } from "react"
+import ScrollProgress from "./ScrollProgress"
 
 function CaseStudy({ show, onClose, name, images, description }) {
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef(null)
+  const [closing, setClosing] = useState(false)
 
   useEffect(() => {
-    // Disable body scroll when modal is open
     if (show) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto"
     }
     return () => {
-      document.body.style.overflow = "auto"; // Cleanup on component unmount
-    };
-  }, [show]);
+      document.body.style.overflow = "auto"
+    }
+  }, [show])
 
-  if (!show) {
-    return null;
+  const handleClose = () => {
+    setClosing(true)
+    document.querySelector(".cover_on_close").style.display = "block"
+    setTimeout(() => {
+      setClosing(false)
+      onClose()
+    }, 700)
+  }
+
+  if (!show && !closing) {
+    return null
   }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
-        className="bg-black opacity-50 fixed inset-0"
-        onClick={onClose}
+        className={`bg-black opacity-50 fixed inset-0 background-overlay ${
+          closing ? "closing" : ""
+        }`}
+        onClick={handleClose}
       ></div>
       <div
         ref={scrollContainerRef}
-        className={`absolute overflow-y-auto w-[85%] right-0 h-full p-[60px] bg-[#2E2E2E] text-white
+        className={`absolute overflow-y-auto w-[85%] right-0 h-full p-[60px] bg-[#2E2E2E] text-white case_study ${
+          closing ? "closing" : ""
         }`}
       >
+        <div className="cover_on_close h-full w-full bg-[#2E2E2E]"></div>
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="relative mb-[60px] text-[14px] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer"
         >
           Close
@@ -74,7 +87,7 @@ function CaseStudy({ show, onClose, name, images, description }) {
         </div>
         <div className="flex justify-between mt-[60px]">
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="text-[14px] relative after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer"
           >
             Back to projects
@@ -85,7 +98,7 @@ function CaseStudy({ show, onClose, name, images, description }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default CaseStudy;
+export default CaseStudy
