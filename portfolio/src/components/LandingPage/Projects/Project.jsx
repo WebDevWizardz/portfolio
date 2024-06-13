@@ -1,16 +1,38 @@
-import React, { useState } from "react"
-import CaseStudy from "./CaseStudy"
+import React, { useState, useEffect, useRef } from "react";
+import CaseStudy from "./CaseStudy";
 
-function Project({ projectData }) {
-  const [showModal, setShowModal] = useState(false)
+function Project({ projectData, id, setCurrentSection }) {
+  const [showModal, setShowModal] = useState(false);
+  const ref = useRef();
 
   const handleOpenModal = () => {
-    setShowModal(true)
-  }
+    setShowModal(true);
+  };
 
   const handleCloseModal = () => {
-    setShowModal(false)
-  }
+    setShowModal(false);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCurrentSection(id);
+        }
+      },
+      { rootMargin: "-200px 0px", threshold: 0.4 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [id, setCurrentSection]);
 
   return (
     <>
@@ -21,7 +43,7 @@ function Project({ projectData }) {
         images={projectData.images}
         description={projectData.description}
       />
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-full" ref={ref}>
         <div className="flex flex-col gap-5 md:flex-row p-4">
           <div
             onClick={!projectData.isComingSoon ? handleOpenModal : null}
@@ -65,7 +87,7 @@ function Project({ projectData }) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Project
+export default Project;
