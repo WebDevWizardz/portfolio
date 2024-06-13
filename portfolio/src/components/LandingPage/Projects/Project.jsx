@@ -44,14 +44,21 @@ function Project({ projectData, id, setCurrentSection }) {
         description={projectData.description}
       />
       <div className="flex items-center justify-center h-full" ref={ref}>
-        <div className="flex flex-col gap-5 md:flex-row p-4">
+        <div
+          className={
+            `flex flex-col gap-5 p-4` +
+            (id % 2 !== 0
+              ? " md:flex-row-reverse md:text-right"
+              : " md:flex-row")
+          }
+        >
           <div
             onClick={!projectData.isComingSoon ? handleOpenModal : null}
             className={
               `w-[539px] h-[336px] overflow-hidden relative` +
               (!projectData.isComingSoon
                 ? " project-image-container cursor-pointer"
-                : "")
+                : " cursor-not-allowed")
             }
           >
             <img
@@ -65,12 +72,22 @@ function Project({ projectData, id, setCurrentSection }) {
           </div>
           <div className="flex flex-col justify-between md:w-[320px]">
             <div>
-              <ul className="list-none flex gap-x-3 text-[12px] text-[#494B50] uppercase">
+              <ul
+                className={
+                  `list-none flex gap-x-[10px] text-[12px] text-[#494B50] uppercase` +
+                  (id % 2 !== 0 ? " md:justify-end" : " md:justify-start")
+                }
+              >
                 {projectData.tags.map((tag, index) => (
                   <li key={index}>
-                    <span>{tag}</span>
-                    <span className="ml-3">
-                      {index !== projectData.tags.length - 1 && "|"}
+                    <span
+                      className={
+                        index !== projectData.tags.length - 1
+                          ? "pr-[10px] border-r-[1px] border-[#67696D]"
+                          : "pl-0 pr-0"
+                      }
+                    >
+                      {tag}
                     </span>
                   </li>
                 ))}
