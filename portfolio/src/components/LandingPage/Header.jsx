@@ -1,11 +1,11 @@
-import React from "react";
-import Logo from "../Icons/Logo";
-import { Link } from "react-scroll";
+import React from "react"
+import Logo from "./Logo"
+import { Link } from "react-scroll"
 
 function Header() {
   return (
     <nav className="fixed z-50 w-full  py-[20px] px-[20px] md:px-[60px] md:py-[40px] flex justify-between mix-blend-difference text-[#fcfcfc]">
-      <a href="#" className="w-[139px] h-[15,44px]">
+      <a href="/" className="w-[139px] h-[15,44px]">
         <Logo fill="#fcfcfc" />
       </a>
       <div className="flex gap-6 text-[12px] cursor-pointer">
@@ -36,7 +36,7 @@ function Header() {
         </Link>
       </div>
     </nav>
-  );
+  )
 }
 
-export default Header;
+export default Header

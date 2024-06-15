@@ -1,5 +1,5 @@
-import React from "react";
-import Logo from "../Icons/Logo";
+import React from "react"
+import Logo from "./Logo"
 
 function Hero() {
   return (
@@ -22,7 +22,7 @@ function Hero() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Hero;
+export default Hero
