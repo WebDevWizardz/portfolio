@@ -9,6 +9,47 @@
   }
 }
 
+/* LOADER */
+
+/* #loader path:nth-child(1) {
+  animation: fill-animation 1.5s forwards;
+}
+#loader path:nth-child(2) {
+  animation: fill-animation 1.5s forwards;
+}
+#loader path:nth-child(3) {
+  animation: fill-animation 1.5s forwards;
+}
+#loader path:nth-child(4) {
+  animation: fill-animation 1.5s forwards;
+}
+#loader path:nth-child(5) {
+  animation: fill-animation 0.5s forwards;
+}
+#loader path:nth-child(6) {
+  animation: fill-animation 0.5s forwards;
+}
+#loader path:nth-child(7) {
+  animation: fill-animation 0.5s forwards;
+}
+#loader path:nth-child(8) {
+  animation: fill-animation 0.5s forwards;
+}
+#loader path:nth-child(9) {
+  animation: fill-animation 0.5s forwards;
+}
+#loader path:nth-child(10) {
+  animation: fill-animation 0.5s forwards;
+}
+#loader path:nth-child(11) {
+  animation: fill-animation 0.5s forwards;
+}
+#loader path:nth-child(12) {
+  animation: fill-animation 0.5s forwards;
+} */
+
+/* LOADER END */
+
 .text-bottom-line {
   position: relative;
 }
