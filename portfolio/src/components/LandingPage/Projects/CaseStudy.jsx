@@ -4,7 +4,6 @@ import ScrollProgress from "./ScrollProgress"
 function CaseStudy({ show, onClose, name, images, description }) {
   const scrollContainerRef = useRef(null)
   const [closing, setClosing] = useState(false)
-
   useEffect(() => {
     if (show) {
       document.body.style.overflow = "hidden"
@@ -75,10 +74,10 @@ function CaseStudy({ show, onClose, name, images, description }) {
           </div>
           <div className="flex-1">
             {images &&
-              images.map((link, index) => (
+              images.map((image, index) => (
                 <img
                   key={index}
-                  src={link}
+                  src={image.asset.url}
                   alt={`${index}`}
                   className="w-full h-auto object-contain mt-[20px]"
                 />
