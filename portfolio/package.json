@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://WebDevWizardz.io/",
+  "homepage": "https://webdevwizardz.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@sanity/client": "^6.20.0",

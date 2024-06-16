@@ -12,7 +12,7 @@ function App() {
     }, 3000)
   }, [])
   return (
-    <Router>
+    <Router basename="/portfolio">
       <div className="App">
         {isLoading ? (<Loader />) : (
           <Routes>
