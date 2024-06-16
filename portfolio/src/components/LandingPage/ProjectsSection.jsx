@@ -11,7 +11,7 @@ function ProjectsSection() {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "project"]{
+        `*[_type == "project"] | order(_updatedAt desc) {
         name,
         "slug": slug.current,
         description,
