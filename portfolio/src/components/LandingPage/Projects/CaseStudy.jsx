@@ -38,14 +38,14 @@ function CaseStudy({ show, onClose, name, images, description }) {
       ></div>
       <div
         ref={scrollContainerRef}
-        className={`absolute overflow-y-auto w-[85%] right-0 h-full p-[60px] bg-[#2E2E2E] text-white case_study ${
+        className={`absolute overflow-y-auto lg:w-[85%] w-full right-0 h-full lg:p-[60px] p-[16px] bg-[#2E2E2E] text-white case_study ${
           closing ? "closing" : ""
         }`}
       >
         <div className="cover_on_close h-full w-full bg-[#2E2E2E]"></div>
         <button
           onClick={handleClose}
-          className="relative mb-[60px] text-[14px] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer"
+          className="relative w-full lg:w-fit flex justify-end lg:justify-start lg:top-0 mb-[60px] text-[14px] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer"
         >
           Close
         </button>
@@ -69,7 +69,7 @@ function CaseStudy({ show, onClose, name, images, description }) {
           </div>
         </div>
         <div className="relative flex items-start">
-          <div className="fixed flex flex-col justify-center h-full w-[50px]">
+          <div className="fixed hidden lg:flex flex-col justify-center h-full w-[50px] none">
             <ScrollProgress scrollContainerRef={scrollContainerRef} />
           </div>
           <div className="flex-1">
