@@ -3,7 +3,7 @@ import Logo from "./Logo"
 
 function Hero() {
   return (
-    <div className="relative h-screen w-screen overflow-hidden">
+    <div className="heroSection relative h-screen w-screen overflow-hidden">
       <video
         className="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2"
         autoPlay
