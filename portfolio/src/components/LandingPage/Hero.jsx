@@ -1,5 +1,5 @@
-import React from "react"
-import Logo from "./Logo"
+import React from "react";
+import Logo from "./Logo";
 
 function Hero() {
   return (
@@ -18,11 +18,11 @@ function Hero() {
       </video>
       <div className="relative z-10 flex items-end justify-center h-full p-5 mix-blend-difference">
         <div className="w-full">
-          <Logo />
+          <Logo fill="#ECECEE" />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
