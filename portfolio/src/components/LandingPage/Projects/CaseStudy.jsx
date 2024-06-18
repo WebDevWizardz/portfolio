@@ -1,31 +1,34 @@
-import React, { useRef, useEffect, useState } from "react"
-import ScrollProgress from "./ScrollProgress"
+import React, { useRef, useEffect, useState } from "react";
+import ScrollProgress from "./ScrollProgress";
 
 function CaseStudy({ show, onClose, name, images, description }) {
-  const scrollContainerRef = useRef(null)
-  const [closing, setClosing] = useState(false)
+  const scrollContainerRef = useRef(null);
+  const [closing, setClosing] = useState(false);
   useEffect(() => {
     if (show) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflowY = "hidden";
+      document.body.style.overflowX = "hidden";
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflowY = "auto";
+      document.body.style.overflowX = "hidden";
     }
     return () => {
-      document.body.style.overflow = "auto"
-    }
-  }, [show])
+      document.body.style.overflowY = "auto";
+      document.body.style.overflowX = "hidden";
+    };
+  }, [show]);
 
   const handleClose = () => {
-    setClosing(true)
-    document.querySelector(".cover_on_close").style.display = "block"
+    setClosing(true);
+    document.querySelector(".cover_on_close").style.display = "block";
     setTimeout(() => {
-      setClosing(false)
-      onClose()
-    }, 700)
-  }
+      setClosing(false);
+      onClose();
+    }, 700);
+  };
 
   if (!show && !closing) {
-    return null
+    return null;
   }
 
   return (
@@ -97,7 +100,7 @@ function CaseStudy({ show, onClose, name, images, description }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default CaseStudy
+export default CaseStudy;
