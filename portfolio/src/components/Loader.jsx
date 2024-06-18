@@ -1,19 +1,19 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react";
 
 function Loader() {
-  const logoRef = useRef(null)
-  const logoBg = useRef(null)
+  const logoRef = useRef(null);
+  const logoBg = useRef(null);
 
   useEffect(() => {
-    const logo = logoRef.current
-    const bg = logoBg.current
+    const logo = logoRef.current;
+    const bg = logoBg.current;
     if (logo) {
       setTimeout(() => {
-        logo.classList.add("exit")
-        bg.classList.add("animate")
-      }, 2500)
+        logo.classList.add("exit");
+        bg.classList.add("animate");
+      }, 2500);
     }
-  }, [])
+  }, []);
 
   return (
     <div
@@ -31,7 +31,7 @@ function Loader() {
         >
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -40,7 +40,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -51,7 +51,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -60,7 +60,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -71,7 +71,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -80,7 +80,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -91,7 +91,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -100,7 +100,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -111,7 +111,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -120,7 +120,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -131,7 +131,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -140,7 +140,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -151,7 +151,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -160,7 +160,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -171,7 +171,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad8" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -180,7 +180,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -191,7 +191,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad9" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -200,7 +200,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -211,7 +211,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad10" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -220,7 +220,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -231,7 +231,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad11" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -240,7 +240,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -251,7 +251,7 @@ function Loader() {
               </stop>
             </linearGradient>
             <linearGradient id="grad12" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ECECEE">
+              <stop offset="0%" stopColor="#ECECEE">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -260,7 +260,7 @@ function Loader() {
                   fill="freeze"
                 />
               </stop>
-              <stop offset="0%" stop-color="#67696D">
+              <stop offset="0%" stopColor="#67696D">
                 <animate
                   attributeName="offset"
                   values="0;1"
@@ -324,7 +324,7 @@ function Loader() {
         </svg>
       </div>
     </div>
-  )
+  );
 }
 
-export default Loader
+export default Loader;

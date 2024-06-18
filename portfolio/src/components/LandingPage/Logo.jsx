@@ -22,8 +22,5 @@ function Logo({ fill }) {
     </svg>
   );
 }
-Logo.defaultProps = {
-  fill: "#ECECEE",
-};
 
 export default Logo;
