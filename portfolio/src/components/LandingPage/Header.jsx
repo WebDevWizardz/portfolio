@@ -29,7 +29,7 @@ function Header() {
       </div>
       <div
         onClick={toggleMenu}
-        className="z-50 block sm:hidden text-[14px] py-[10px] px-[18px]"
+        className="z-50 block sm:hidden text-[14px] py-[10px] pl-[18px]"
       >
         {!isOpen ? "Navi" : "Close"}
       </div>
