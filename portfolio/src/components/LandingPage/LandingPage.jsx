@@ -1,9 +1,9 @@
-import React from "react"
-import Hero from "./Hero"
-import Header from "./Header"
-import ProjectsSection from "./ProjectsSection"
-import InstagramSection from "./Instagram/InstagramSection"
-import ContactSection from "./ContactSection"
+import React from "react";
+import Hero from "./Hero";
+import Header from "./Header";
+import ProjectsSection from "./ProjectsSection";
+import InstagramSection from "./Instagram/InstagramSection";
+import ContactSection from "./ContactSection";
 
 function LandingPage() {
   //fetch
@@ -17,7 +17,7 @@ function LandingPage() {
       <InstagramSection />
       <ContactSection />
     </div>
-  )
+  );
 }
 
-export default LandingPage
+export default LandingPage;

@@ -1,42 +1,46 @@
-import React from "react"
-import Logo from "./Logo"
-import { Link } from "react-scroll"
+import React, { useState } from "react";
+import Logo from "./Logo";
+import NavLinks from "./NavLinks";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+
+    if (isOpen) {
+      document.body.style.overflowY = "auto";
+    } else {
+      document.body.style.overflowY = "hidden";
+    }
+  };
+
   return (
-    <nav className="heroSection fixed z-50 w-full  py-[20px] px-[20px] md:px-[60px] md:py-[40px] flex justify-between mix-blend-difference text-[#fcfcfc]">
-      <a href="/" className="w-[139px] h-[15,44px]">
+    <nav
+      className={`fixed z-50 w-full py-[20px] px-[20px] md:px-[60px] md:py-[40px] flex justify-between text-[#fcfcfc] ${
+        isOpen ? "" : " mix-blend-difference"
+      }`}
+    >
+      <a href="#" className="w-[139px] h-[15,44px] z-50">
         <Logo fill="#fcfcfc" />
       </a>
-      <div className="flex gap-6 text-[12px] cursor-pointer">
-        <Link
-          className="text-bottom-line"
-          to="work"
-          smooth={true}
-          duration={1500}
-        >
-          Work
-        </Link>
-        <a
-          href="https://www.instagram.com/karo.dsgn"
-          className="text-bottom-line"
-        >
-          Playground
-        </a>
-        <a href="https://read.cv/karolinahess" className="text-bottom-line">
-          Resume
-        </a>
-        <Link
-          to="contact"
-          smooth={true}
-          duration={1500}
-          className="text-bottom-line"
-        >
-          Contact
-        </Link>
+      <div className="hidden sm:flex gap-6 text-[12px] cursor-pointer">
+        <NavLinks isMobile={false} />
       </div>
+      <div
+        onClick={toggleMenu}
+        className="z-50 block sm:hidden text-[14px] py-[10px] px-[18px]"
+      >
+        {!isOpen ? "Navi" : "Close"}
+      </div>
+
+      {isOpen && (
+        <div className="absolute top-0 left-0 px-[20px] flex flex-col justify-center sm:hidden gap-6 text-[45px] cursor-pointer bg-[#231D1C] w-full h-screen">
+          <NavLinks isMobile={true} onLinkClick={toggleMenu} />
+        </div>
+      )}
     </nav>
-  )
+  );
 }
 
-export default Header
+export default Header;

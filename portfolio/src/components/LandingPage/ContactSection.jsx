@@ -7,10 +7,10 @@ function ContactSection() {
 
   return (
     <Element
-      className="bg-[#2C2D30] md:px-[60px] pb-[60px] pl-[20px] md:mt-[140px] mt-[60px]"
+      className="bg-[#2C2D30] md:px-[60px] pb-[60px] md:mt-[140px] mt-[60px]"
       name="contact"
     >
-      <div className="flex justify-center h-screen bg-[#2C2D30] flex-col md:px-[10%]">
+      <div className="flex justify-center h-fit py-[20vh] sm:py-0 sm:h-screen bg-[#2C2D30] flex-col md:px-[10%] pl-[20px]">
         <p className="text-[#ECECEE] md:text-[12px] text-[16px] uppercase">
           don't be shy
         </p>
@@ -42,7 +42,7 @@ function ContactSection() {
           </span>
         </p>
       </div>
-      <div className=" flex justify-between text-[12px] pt-[12px] border-t-[.5px] border-[#67696D] mx-[20px]">
+      <div className=" flex justify-between text-[12px] pt-[12px] border-t-[.5px] border-[#67696D] mx-[10px] sm:mx-[20px]">
         <p className="items-end text-[#DFE0E2]">
           Coded with love by{" "}
           <a href="#" className="underline cursor-pointer">

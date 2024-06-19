@@ -3,9 +3,9 @@ import Logo from "./Logo";
 
 function Hero() {
   return (
-    <div className="heroSection relative h-screen w-screen overflow-hidden">
+    <div className="z-10 heroSection relative h-[100vh] md:h-screen w-screen overflow-hidden bg-[black]">
       <video
-        className="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2"
+        className="absolute w-full h-full object-fit md:object-cover scale-150 sm:scale-1"
         autoPlay
         loop
         muted
