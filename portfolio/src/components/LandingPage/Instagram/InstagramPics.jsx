@@ -1,55 +1,65 @@
-import React, { useEffect } from "react"
-import Swiper from "swiper/bundle"
+import React, { useRef, useEffect } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination } from "swiper/modules"
 import "swiper/css"
-import "swiper/css/navigation" // Import Swiper navigation styles
-import "swiper/css/pagination" // Import Swiper pagination styles
+import "swiper/css/pagination"
 
 function InstagramPics({ images }) {
-  useEffect(() => {
-    new Swiper(".swiper", {
-      direction: "horizontal",
-      loop: true,
-      slidesPerView: 4,
-      spaceBetween: 20,
-      breakpoints: {
-        // when window width is >= 640px
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        // when window width is >= 768px
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // when window width is >= 1024px
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 20,
-        },
-      },
+  const swiperRef = useRef(null)
+
+  const handleSwiperMove = () => {
+    const swiper = swiperRef.current.swiper
+    const translateValue = swiper.translate * 0.3 // Adjust this value to change the speed difference
+    const parallaxEls = document.querySelectorAll(".parallax-bg")
+    parallaxEls.forEach((el) => {
+      el.style.transform = `translateX(${translateValue}px)`
     })
+  }
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      const swiper = swiperRef.current.swiper
+      swiper.on("sliderMove", handleSwiperMove)
+      swiper.on("slideChangeTransitionStart", handleSwiperMove)
+      swiper.on("slideChangeTransitionEnd", handleSwiperMove)
+    }
   }, [])
 
   return (
-    <div className="swiper">
-      <div className="swiper-wrapper">
-        {images.map((image, index) => (
+    <Swiper
+      modules={[Pagination]}
+      ref={swiperRef}
+      loop={true}
+      slidesPerView={1.2}
+      spaceBetween={10}
+      pagination={{ dynamicBullets: true }}
+      speed={500}
+      breakpoints={{
+        640: {
+          slidesPerView: 1.2,
+          spaceBetween: 10,
+          pagination: true,
+        },
+        768: {
+          slidesPerView: 4.2,
+          spaceBetween: 20,
+          pagination: false,
+        },
+      }}
+      className="mySwiper"
+    >
+      {images.map((image, index) => (
+        <SwiperSlide key={index}>
           <div
-            key={index}
-            className={`swiper-slide w-[315px] ${
-              index % 2 === 0 ? "h-[315px]" : "h-[420px]"
+            className={`slide-bg parallax-bg ${
+              index % 2 === 0 ? "!h-[75%]" : "!h-[100%]"
             }`}
-          >
-            <img
-              className="object-cover"
-              src={`${process.env.PUBLIC_URL}${image.src}`}
-              alt={image.alt}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+            style={{ backgroundImage: `url(${image.src})` }}
+          ></div>
+          <div className="slide-content"></div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   )
 }
 
