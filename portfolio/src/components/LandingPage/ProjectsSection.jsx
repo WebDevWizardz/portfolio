@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react"
-import Project from "./Projects/Project"
-import { Element } from "react-scroll"
-import ProjectsProgressBar from "./ProjectsProgressBar"
-import sanityClient from "../../sanityClient"
+import React, { useState, useEffect } from "react";
+import Project from "./Projects/Project";
+import { Element } from "react-scroll";
+import ProjectsProgressBar from "./ProjectsProgressBar";
+import sanityClient from "../../sanityClient";
 
 function ProjectsSection() {
-  const [currentSection, setCurrentSection] = useState(0)
-  const [projects, setProjects] = useState([])
+  const [currentSection, setCurrentSection] = useState(0);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     sanityClient
@@ -22,11 +22,11 @@ function ProjectsSection() {
       }`
       )
       .then((data) => {
-        setProjects(data)
-        console.log(data) // Log data once when it is fetched
+        setProjects(data);
+        console.log(data); // Log data once when it is fetched
       })
-      .catch(console.error)
-  }, [])
+      .catch(console.error);
+  }, []);
 
   return (
     <Element name="work">
@@ -35,7 +35,7 @@ function ProjectsSection() {
           sections={projects}
           currentSection={currentSection}
         />
-        <div className="flex flex-col gap-y-[120px] md:gap-y-[30vh]">
+        <div className="flex flex-col gap-y-[70px] md:gap-y-[30vh]">
           {projects.map((project, index) => (
             <Project
               key={index}
@@ -47,7 +47,7 @@ function ProjectsSection() {
         </div>
       </div>
     </Element>
-  )
+  );
 }
 
-export default ProjectsSection
+export default ProjectsSection;
