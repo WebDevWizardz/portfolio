@@ -11,31 +11,31 @@ function ContactSection() {
       name="contact"
     >
       <div className="flex justify-center h-fit py-[20vh] sm:py-0 sm:h-screen bg-[#2C2D30] flex-col md:px-[10%] pl-[20px]">
-        <p className="text-[#ECECEE] md:text-[12px] text-[16px] uppercase">
-          don't be shy
-        </p>
-        <p className="text-[#ECECEE] md:text-[95px] text-[60px] mb-[20px]">
+        <p className="text-[#ECECEE] text-[14px] uppercase">don't be shy</p>
+        <p className="text-[#ECECEE] md:text-[95px] text-[34px] mb-[20px]">
           Say hello
           <a
             href={`mailto:hesskarolina@gmail.com ?subject=Collaboration ${mailContent}`}
-            className="md:text-[18px] text-[20px] ml-[20px] mail-emoji-hover"
+            className="md:text-[18px] text-[14px] ml-[20px] mail-emoji-hover"
           >
             (email)
           </a>
         </p>
-        <p className="text-[#85878A] text-[25px] font-bold uppercase">or</p>
-        <p className="text-[#ECECEE] md:text-[95px] text-[60px] md:ml-[120px] md:leading-[3rem]">
-          spy on me here
-          <span className="inline-block md:ml-[20px]">
+        <p className="text-[#85878A] md:text-[25px] text-[14px] font-bold uppercase">
+          or
+        </p>
+        <p className="text-[#ECECEE] md:text-[95px] text-[34px] md:ml-[120px] md:leading-[3rem]">
+          <span className="mr-[20px]">spy on me here</span>
+          <span className="inline-block">
             <a
               href="https://www.linkedin.com/in/karolina-hess-793399257/"
-              className="md:text-[16px] text-[20px] block girl-emoji-hover"
+              className="md:text-[16px] text-[14px] block girl-emoji-hover"
             >
               (LinkedIn)
             </a>
             <a
               href="https://www.instagram.com/karo.dsgn"
-              className="md:text-[16px] text-[20px] block eyes-emoji-hover"
+              className="md:text-[16px] text-[14px] block eyes-emoji-hover"
             >
               (Instagram)
             </a>
