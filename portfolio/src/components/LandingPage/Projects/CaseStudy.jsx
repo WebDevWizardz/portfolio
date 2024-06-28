@@ -50,7 +50,6 @@ function CaseStudy({ show, onClose, name, images, description }) {
           closing ? "closing" : ""
         }`}
       >
-        <div className="cover_on_close h-full w-full bg-[#2E2E2E]"></div>
         <button
           onClick={handleClose}
           className="relative w-full lg:w-fit flex justify-end lg:justify-start lg:top-0 mb-[60px] text-[14px] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer"

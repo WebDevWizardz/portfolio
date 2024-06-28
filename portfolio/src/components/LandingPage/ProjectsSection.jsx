@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Project from "./Projects/Project";
-import { Element } from "react-scroll";
-import ProjectsProgressBar from "./ProjectsProgressBar";
-import sanityClient from "../../sanityClient";
+import React, { useState, useEffect } from "react"
+import Project from "./Projects/Project"
+import { Element } from "react-scroll"
+import ProjectsProgressBar from "./ProjectsProgressBar"
+import sanityClient from "../../sanityClient"
 
 function ProjectsSection() {
-  const [currentSection, setCurrentSection] = useState(0);
-  const [projects, setProjects] = useState([]);
+  const [currentSection, setCurrentSection] = useState(0)
+  const [projects, setProjects] = useState([])
 
   useEffect(() => {
     sanityClient
@@ -22,15 +22,14 @@ function ProjectsSection() {
       }`
       )
       .then((data) => {
-        setProjects(data);
-        console.log(data); // Log data once when it is fetched
+        setProjects(data)
       })
-      .catch(console.error);
-  }, []);
+      .catch(console.error)
+  }, [])
 
   return (
     <Element name="work">
-      <div className="relative my-[60px] md:my-[175px] py-[40px]">
+      <div className="relative my-[60px] md:my-[175px] py-[40px] scrollbarBug">
         <ProjectsProgressBar
           sections={projects}
           currentSection={currentSection}
@@ -47,7 +46,7 @@ function ProjectsSection() {
         </div>
       </div>
     </Element>
-  );
+  )
 }
 
-export default ProjectsSection;
+export default ProjectsSection

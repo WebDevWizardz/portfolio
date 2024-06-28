@@ -17,6 +17,13 @@
     opacity: 1;
   }
 }
+* {
+  scrollbar-color: #d8d8d8 transparent;
+  scrollbar-width: thin;
+}
+.scrollbarBug {
+  padding-left: calc(100vw - 100%);
+}
 .heroSection {
   animation: easeIn 1s ease;
   transition: all ease;

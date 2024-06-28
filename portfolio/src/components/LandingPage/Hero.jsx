@@ -1,11 +1,11 @@
-import React from "react";
-import Logo from "./Logo";
+import React from "react"
+import Logo from "./Logo"
 
 function Hero() {
   return (
     <div className="z-10 heroSection relative h-[100vh] md:h-screen w-screen overflow-hidden bg-[black]">
       <video
-        className="absolute w-full h-full object-fit md:object-cover scale-150 sm:scale-1"
+        className="absolute w-screen h-full object-fit md:object-cover scale-150 sm:scale-1"
         autoPlay
         loop
         muted
@@ -22,7 +22,7 @@ function Hero() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Hero;
+export default Hero
