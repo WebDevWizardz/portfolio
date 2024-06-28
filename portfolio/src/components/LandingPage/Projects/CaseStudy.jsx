@@ -1,34 +1,39 @@
-import React, { useRef, useEffect, useState } from "react";
-import ScrollProgress from "./ScrollProgress";
+import React, { useRef, useEffect, useState } from "react"
+import ScrollProgress from "./ScrollProgress"
 
 function CaseStudy({ show, onClose, name, images, description }) {
-  const scrollContainerRef = useRef(null);
-  const [closing, setClosing] = useState(false);
+  const scrollContainerRef = useRef(null)
+  const [closing, setClosing] = useState(false)
   useEffect(() => {
     if (show) {
-      document.body.style.overflowY = "hidden";
-      document.body.style.overflowX = "hidden";
+      document.body.style.overflowY = "hidden"
+      document.body.style.overflowX = "hidden"
     } else {
-      document.body.style.overflowY = "auto";
-      document.body.style.overflowX = "hidden";
+      document.body.style.overflowY = "auto"
+      document.body.style.overflowX = "hidden"
     }
     return () => {
-      document.body.style.overflowY = "auto";
-      document.body.style.overflowX = "hidden";
-    };
-  }, [show]);
+      document.body.style.overflowY = "auto"
+      document.body.style.overflowX = "hidden"
+    }
+  }, [show])
 
   const handleClose = () => {
-    setClosing(true);
-    document.querySelector(".cover_on_close").style.display = "block";
+    setClosing(true)
+    const divContent = document.querySelector(".hide_on_close")
+    const content = divContent.querySelectorAll("*")
+    content.forEach((element) => {
+      element.style.display = "none"
+    })
+
     setTimeout(() => {
-      setClosing(false);
-      onClose();
-    }, 700);
-  };
+      setClosing(false)
+      onClose()
+    }, 700)
+  }
 
   if (!show && !closing) {
-    return null;
+    return null
   }
 
   return (
@@ -41,7 +46,7 @@ function CaseStudy({ show, onClose, name, images, description }) {
       ></div>
       <div
         ref={scrollContainerRef}
-        className={`absolute overflow-y-auto lg:w-[85%] w-full right-0 h-full lg:p-[60px] p-[16px] bg-[#2E2E2E] text-white case_study ${
+        className={`hide_on_close absolute overflow-y-auto lg:w-[85%] w-full right-0 h-full lg:p-[60px] p-[16px] bg-[#2E2E2E] text-white case_study ${
           closing ? "closing" : ""
         }`}
       >
@@ -94,13 +99,10 @@ function CaseStudy({ show, onClose, name, images, description }) {
           >
             Back to projects
           </button>
-          <button className="text-[14px] relative after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer">
-            Next project
-          </button>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default CaseStudy;
+export default CaseStudy
