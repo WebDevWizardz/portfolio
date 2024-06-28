@@ -1,9 +1,9 @@
-import React from "react";
-import { Element } from "react-scroll";
+import React from "react"
+import { Element } from "react-scroll"
 
 function ContactSection() {
   const mailContent =
-    "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,...";
+    "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,..."
 
   return (
     <Element
@@ -18,7 +18,7 @@ function ContactSection() {
             href={`mailto:hesskarolina@gmail.com ?subject=Collaboration ${mailContent}`}
             className="md:text-[18px] text-[14px] ml-[20px] mail-emoji-hover"
           >
-            (email)
+            (Email)
           </a>
         </p>
         <p className="text-[#85878A] md:text-[25px] text-[14px] font-bold uppercase">
@@ -45,7 +45,7 @@ function ContactSection() {
       <div className=" flex justify-between text-[12px] pt-[12px] border-t-[.5px] border-[#67696D] mx-[10px] sm:mx-[20px]">
         <p className="items-end text-[#DFE0E2]">
           Coded with love by{" "}
-          <a href="#" className="underline cursor-pointer">
+          <a href="/portfolio" className="underline cursor-pointer">
             WDW
           </a>
         </p>
@@ -54,7 +54,7 @@ function ContactSection() {
         </p>
       </div>
     </Element>
-  );
+  )
 }
 
-export default ContactSection;
+export default ContactSection
