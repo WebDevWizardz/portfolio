@@ -17,7 +17,7 @@ function Hero() {
         Your browser does not support the video tag.
       </video>
       <div className="relative z-10 flex items-end justify-center h-full p-5 mix-blend-difference">
-        <div className="w-full">
+        <div className="w-full absolute">
           <Logo fill="#ECECEE" />
         </div>
       </div>

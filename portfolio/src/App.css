@@ -28,8 +28,27 @@
   animation: easeIn 1s ease;
   transition: all ease;
 }
-/* LOADER */
 
+.logoRotate {
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+  top: 640px;
+  animation: scrollRotate;
+  animation-timeline: scroll();
+}
+
+@keyframes scrollRotate {
+  from {
+    top: 640px;
+    width: 100vw;
+  }
+  to {
+    top: 0;
+    width: 20vw;
+  }
+}
+/* LOADER */
 .animate {
   animation: animateBg 0.5s ease-out forwards;
 }

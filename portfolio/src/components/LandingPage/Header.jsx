@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import Logo from "./Logo"
 import NavLinks from "./NavLinks"
 
 function Header() {
@@ -18,13 +17,10 @@ function Header() {
   return (
     <div className="scrollbarBug">
       <nav
-        className={`fixed z-50 w-full py-[20px] px-[20px] md:px-[60px] md:py-[40px] flex justify-between text-[#fcfcfc] ${
+        className={`fixed z-50 w-full py-[20px] px-[20px] md:px-[60px] md:py-[40px] flex justify-end text-[#fcfcfc] ${
           isOpen ? "" : " mix-blend-difference"
         }`}
       >
-        <a href="/portfolio" className="w-[139px] h-[15,44px] z-50">
-          <Logo fill="#fcfcfc" />
-        </a>
         <div className="hidden sm:flex gap-6 text-[12px] cursor-pointer">
           <NavLinks isMobile={false} />
         </div>
