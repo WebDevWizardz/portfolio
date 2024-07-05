@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import NavLinks from "./NavLinks"
+import { gsap } from "gsap"
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,10 +15,18 @@ function Header() {
     }
   }
 
+  useEffect(() => {
+    gsap.to(".nav", {
+      y: "0",
+      duration: 1.5,
+      ease: "power2.inOut",
+    })
+  }, [])
+
   return (
     <div className="scrollbarBug">
       <nav
-        className={`fixed z-50 w-full py-[20px] px-[20px] md:px-[60px] md:py-[40px] flex justify-end text-[#fcfcfc] ${
+        className={`fixed z-50 w-full py-[20px] px-[20px] md:px-[60px] md:py-[40px] -translate-y-full flex justify-end text-[#fcfcfc] nav ${
           isOpen ? "" : " mix-blend-difference"
         }`}
       >

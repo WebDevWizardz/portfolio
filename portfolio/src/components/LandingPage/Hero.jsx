@@ -24,7 +24,7 @@ function Hero() {
   }, [])
 
   return (
-    <div className="z-10 heroSection relative h-[100vh] md:h-screen w-screen overflow-hidden bg-[black] start">
+    <div className="z-10 heroSection relative h-[100vh] md:h-screen w-screen overflow-hidden bg-none start">
       <video
         className="absolute w-screen h-full object-fit md:object-cover scale-150 sm:scale-1"
         autoPlay

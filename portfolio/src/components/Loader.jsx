@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react"
+import { gsap } from "gsap"
 
-function Loader() {
+function Loader({ onComplete }) {
+  // Add onComplete prop
   const logoRef = useRef(null)
   const logoBg = useRef(null)
 
@@ -10,10 +12,19 @@ function Loader() {
     if (logo) {
       setTimeout(() => {
         logo.classList.add("exit")
-        bg.classList.add("animate")
-      }, 2500)
+      }, 2000)
+      setTimeout(() => {
+        gsap.to(bg, {
+          y: "-100%",
+          duration: 1,
+          ease: "power2.inOut",
+          onComplete: () => {
+            onComplete() // Notify that the animation is complete
+          },
+        })
+      }, 2500) // Delay to allow initial animations to complete before moving loader
     }
-  }, [])
+  }, [onComplete])
 
   return (
     <div
