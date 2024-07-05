@@ -29,7 +29,7 @@ function ProjectsSection() {
 
   return (
     <Element name="work">
-      <div className="relative my-[60px] md:my-[175px] py-[40px] scrollbarBug">
+      <div className="relative md:my-[175px] py-[100px] scrollbarBug">
         <ProjectsProgressBar
           sections={projects}
           currentSection={currentSection}

@@ -1,38 +1,39 @@
-import React, { useState, useEffect, useRef } from "react";
-import CaseStudy from "./CaseStudy";
+import React, { useState, useEffect, useRef } from "react"
+import CaseStudy from "./CaseStudy"
 
 function Project({ projectData, id, setCurrentSection }) {
-  const [showModal, setShowModal] = useState(false);
-  const ref = useRef();
+  const [showModal, setShowModal] = useState(false)
+  const ref = useRef()
 
   const handleOpenModal = () => {
-    setShowModal(true);
-  };
+    setShowModal(true)
+  }
 
   const handleCloseModal = () => {
-    setShowModal(false);
-  };
+    setShowModal(false)
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setCurrentSection(id);
+          setCurrentSection(id)
         }
       },
       { rootMargin: "-200px 0px", threshold: 0.4 }
-    );
+    )
 
     if (ref.current) {
-      observer.observe(ref.current);
+      observer.observe(ref.current)
     }
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(ref.current)
       }
-    };
-  }, [id, setCurrentSection]);
+    }
+  }, [id, setCurrentSection])
 
   return (
     <>
@@ -135,7 +136,7 @@ function Project({ projectData, id, setCurrentSection }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Project;
+export default Project

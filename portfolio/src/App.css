@@ -8,6 +8,7 @@
     src: url("../public/assets/font/TestSöhneBreit/test-soehne-breit-leicht.woff2");
   }
 }
+
 /* LANDING PAGE EASE IN */
 @keyframes easeIn {
   from {
@@ -20,6 +21,7 @@
 * {
   scrollbar-color: #d8d8d8 transparent;
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 .scrollbarBug {
   padding-left: calc(100vw - 100%);
@@ -29,25 +31,30 @@
   transition: all ease;
 }
 
-.logoRotate {
+/* LOGO ANIMATION */
+.letter {
+  opacity: 0;
+  transform: translateY(200px);
+}
+.logo-container {
   position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  z-index: 10000;
+  padding: 40px;
+}
+.logo_animate {
+  transform-origin: center;
+  transform: translateY(70vh);
+  z-index: 1000;
+  color: #000;
   width: 100vw;
-  height: 100px;
-  top: 640px;
-  animation: scrollRotate;
-  animation-timeline: scroll();
 }
+/* END LOGO ANIMATION */
 
-@keyframes scrollRotate {
-  from {
-    top: 640px;
-    width: 100vw;
-  }
-  to {
-    top: 0;
-    width: 20vw;
-  }
-}
 /* LOADER */
 .animate {
   animation: animateBg 0.5s ease-out forwards;

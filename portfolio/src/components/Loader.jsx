@@ -1,19 +1,19 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react"
 
 function Loader() {
-  const logoRef = useRef(null);
-  const logoBg = useRef(null);
+  const logoRef = useRef(null)
+  const logoBg = useRef(null)
 
   useEffect(() => {
-    const logo = logoRef.current;
-    const bg = logoBg.current;
+    const logo = logoRef.current
+    const bg = logoBg.current
     if (logo) {
       setTimeout(() => {
-        logo.classList.add("exit");
-        bg.classList.add("animate");
-      }, 2500);
+        logo.classList.add("exit")
+        bg.classList.add("animate")
+      }, 2500)
     }
-  }, []);
+  }, [])
 
   return (
     <div
@@ -324,7 +324,7 @@ function Loader() {
         </svg>
       </div>
     </div>
-  );
+  )
 }
 
-export default Loader;
+export default Loader
