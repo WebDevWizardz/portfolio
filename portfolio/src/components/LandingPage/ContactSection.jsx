@@ -1,14 +1,13 @@
 import React from "react"
-import { Element } from "react-scroll"
 
 function ContactSection() {
   const mailContent =
     "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,..."
 
   return (
-    <Element
+    <div
+      id="contact"
       className="bg-[#2C2D30] md:px-[60px] pb-[60px] md:mt-[140px] mt-[60px]"
-      name="contact"
     >
       <div className="flex justify-center h-fit py-[20vh] sm:py-0 sm:h-screen bg-[#2C2D30] flex-col md:px-[10%] pl-[20px]">
         <p className="text-[#ECECEE] text-[14px] uppercase">don't be shy</p>
@@ -53,7 +52,7 @@ function ContactSection() {
           © {new Date().getFullYear()} Karolina Hess
         </p>
       </div>
-    </Element>
+    </div>
   )
 }
 

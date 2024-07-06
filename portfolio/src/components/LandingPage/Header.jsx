@@ -15,6 +15,7 @@ function Header() {
     }
   }
 
+  //slide in form top on page load
   useEffect(() => {
     gsap.to(".nav", {
       y: "0",
@@ -27,7 +28,7 @@ function Header() {
   return (
     <div className="scrollbarBug">
       <nav
-        className={`fixed z-50 w-full py-[20px] px-[20px] md:px-[60px] md:py-[40px] -translate-y-full flex justify-end text-[#fcfcfc] nav ${
+        className={`fixed z-50 w-1/2 right-0 py-[20px] px-[20px] md:px-[60px] md:py-[40px] -translate-y-full flex justify-end text-[#fcfcfc] nav ${
           isOpen ? "" : " mix-blend-difference"
         }`}
       >

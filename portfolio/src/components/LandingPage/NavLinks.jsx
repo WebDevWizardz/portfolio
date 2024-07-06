@@ -1,42 +1,56 @@
-import React from "react";
-import { Link } from "react-scroll";
+import React from "react"
+import { gsap } from "gsap"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
-function NavLinks({ isMobile, onLinkClick }) {
+gsap.registerPlugin(ScrollToPlugin)
+
+function NavLinks({ isMobile }) {
   return (
     <>
-      <Link
+      <p
         className="text-bottom-line"
-        to="work"
-        smooth={true}
-        duration={1500}
-        onClick={onLinkClick}
+        onClick={() => {
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: { y: "#work", offsetY: 200 },
+          })
+        }}
       >
         {isMobile && <span className="mr-[35px] text-[10px]">01</span>}
         Work
-      </Link>
+      </p>
       <a
+        target="_blank"
+        rel="noopener noreferrer"
         href="https://www.instagram.com/karo.dsgn"
         className="text-bottom-line"
       >
         {isMobile && <span className="mr-[35px] text-[10px]">02</span>}
         Playground
       </a>
-      <a href="https://read.cv/karolinahess" className="text-bottom-line">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://read.cv/karolinahess"
+        className="text-bottom-line"
+      >
         {isMobile && <span className="mr-[35px] text-[10px]">03</span>}
         Resume
       </a>
-      <Link
-        to="contact"
-        smooth={true}
-        duration={1500}
+      <p
         className="text-bottom-line"
-        onClick={onLinkClick}
+        onClick={() => {
+          gsap.to(window, {
+            duration: 1.5,
+            scrollTo: { y: "#contact", offsetY: -100 },
+          })
+        }}
       >
         {isMobile && <span className="mr-[35px] text-[10px]">04</span>}
         Contact
-      </Link>
+      </p>
     </>
-  );
+  )
 }
 
-export default NavLinks;
+export default NavLinks

@@ -24,7 +24,10 @@ function Hero() {
   }, [])
 
   return (
-    <div className="z-10 heroSection relative h-[100vh] md:h-screen w-screen overflow-hidden bg-none start">
+    <div
+      id="heroSection"
+      className="z-10 heroSection relative h-[100vh] md:h-screen w-screen overflow-hidden bg-none start"
+    >
       <video
         className="absolute w-screen h-full object-fit md:object-cover scale-150 sm:scale-1"
         autoPlay
@@ -40,7 +43,7 @@ function Hero() {
       <div className="relative z-10 flex items-end justify-center h-full p-5 mix-blend-difference">
         <div className="w-full absolute">
           <div className="logo-container">
-            <div className="logo_animate">
+            <div className="logo_animate relative z-[90]">
               <Logo fill="#ECECEE" />
             </div>
           </div>

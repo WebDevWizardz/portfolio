@@ -1,5 +1,8 @@
 import React, { useEffect } from "react"
 import { gsap } from "gsap"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+
+gsap.registerPlugin(ScrollToPlugin)
 
 function Logo({ fill }) {
   useEffect(() => {
@@ -14,6 +17,13 @@ function Logo({ fill }) {
   }, [])
   return (
     <svg
+      className=" cursor-pointer relative z-[90]"
+      onClick={() => {
+        gsap.to(window, {
+          duration: 1.5,
+          scrollTo: { y: "#heroSection" },
+        })
+      }}
       width="100%"
       height="100%"
       viewBox="0 0 360 50"
