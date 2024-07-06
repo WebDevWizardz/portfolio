@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import NavLinks from "./NavLinks"
 import { gsap } from "gsap"
 
-function Header() {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -52,4 +52,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Navbar

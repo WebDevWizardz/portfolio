@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Hero from "./Hero"
-import Header from "./Header"
+import Navbar from "./Navbar"
 import ProjectsSection from "./ProjectsSection"
 import InstagramSection from "./Instagram/InstagramSection"
 import ContactSection from "./ContactSection"
@@ -26,7 +26,7 @@ function LandingPage() {
   return (
     <div className="font-display bg-[#fcfcfc]">
       {isLoading && <Loader onComplete={handleLoaderComplete} />}
-      <Header />
+      <Navbar />
       <Hero />
       <ProjectsSection />
       <InstagramSection />
