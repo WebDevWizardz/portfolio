@@ -21,7 +21,6 @@
 * {
   scrollbar-color: #d8d8d8 transparent;
   scrollbar-width: thin;
-  scroll-behavior: smooth;
 }
 
 .scrollbarBug {
