@@ -11,9 +11,9 @@ function Loader({ onComplete }) {
     if (logo) {
       setTimeout(() => {
         logo.classList.add("exit")
-      }, 2000)
+      }, 2500)
       gsap.to(bg, {
-        delay: 2.5,
+        delay: 2.7,
         y: "-100%",
         duration: 1,
         ease: "power2.inOut",
