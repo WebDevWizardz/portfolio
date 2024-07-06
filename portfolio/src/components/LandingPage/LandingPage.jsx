@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Hero from "./Hero"
 import Header from "./Header"
 import ProjectsSection from "./ProjectsSection"
@@ -12,6 +12,16 @@ function LandingPage() {
   const handleLoaderComplete = () => {
     setIsLoading(false) // Switch to LandingPage after loader completes
   }
+
+  useEffect(() => {
+    if (isLoading) {
+      document.body.classList.add("no-scroll")
+    } else {
+      setTimeout(() => {
+        document.body.classList.remove("no-scroll")
+      }, 1000)
+    }
+  }, [isLoading])
 
   return (
     <div className="font-display bg-[#fcfcfc]">

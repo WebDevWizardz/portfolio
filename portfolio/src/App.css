@@ -57,6 +57,11 @@
 /* END LOGO ANIMATION */
 
 /* LOADER */
+
+/* block scroll when loader is visible */
+.no-scroll {
+  overflow: hidden !important;
+}
 .animate {
   animation: animateBg 5s ease-in-out forwards;
 }
