@@ -4,11 +4,12 @@ import { gsap } from "gsap"
 function Logo({ fill }) {
   useEffect(() => {
     gsap.to(".letter", {
-      y: 0, // Slide from bottom
-      opacity: 1, // Fade in effect
-      stagger: { each: 0.1, from: "end" }, // Delay between each letter
+      y: 0,
+      opacity: 1,
+      stagger: { each: 0.1, from: "end" },
       duration: 1,
       ease: "power3.out",
+      delay: 2.6,
     })
   }, [])
   return (

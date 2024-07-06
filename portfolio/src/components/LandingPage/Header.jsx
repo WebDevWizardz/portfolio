@@ -20,6 +20,7 @@ function Header() {
       y: "0",
       duration: 1.5,
       ease: "power2.inOut",
+      delay: 2.6,
     })
   }, [])
 

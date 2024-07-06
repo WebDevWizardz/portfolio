@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 
 function Loader({ onComplete }) {
-  // Add onComplete prop
   const logoRef = useRef(null)
   const logoBg = useRef(null)
 
@@ -13,23 +12,22 @@ function Loader({ onComplete }) {
       setTimeout(() => {
         logo.classList.add("exit")
       }, 2000)
-      setTimeout(() => {
-        gsap.to(bg, {
-          y: "-100%",
-          duration: 1,
-          ease: "power2.inOut",
-          onComplete: () => {
-            onComplete() // Notify that the animation is complete
-          },
-        })
-      }, 2500) // Delay to allow initial animations to complete before moving loader
+      gsap.to(bg, {
+        delay: 2.5,
+        y: "-100%",
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: () => {
+          onComplete()
+        },
+      })
     }
   }, [onComplete])
 
   return (
     <div
       ref={logoBg}
-      className="logoBg w-full h-screen flex gap-3 justify-center items-center bg-[#0f0f10]"
+      className="logoBg absolute z-50 w-full h-screen flex gap-3 justify-center items-center bg-[#0f0f10]"
     >
       <div className="logo_container overflow-hidden relative">
         <svg
