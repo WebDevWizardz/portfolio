@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from "react"
 import CaseStudy from "./CaseStudy"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/all"
+import ProjectDetails from "./ProjectDetails"
+import ProjectImage from "./ProjectImage"
+
+gsap.registerPlugin(ScrollTrigger)
 
 function Project({ projectData, id, setCurrentSection }) {
   const [showModal, setShowModal] = useState(false)
@@ -26,14 +32,32 @@ function Project({ projectData, id, setCurrentSection }) {
     if (ref.current) {
       observer.observe(ref.current)
     }
-
     return () => {
       if (ref.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(ref.current)
       }
     }
   }, [id, setCurrentSection])
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".tags",
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".tags_trigger",
+          start: "top center+=100",
+          end: "bottom center",
+          toggleActions: "play none none none",
+          markers: true,
+        },
+        duration: 1,
+        ease: "power3.out",
+      }
+    )
+  }, [])
 
   return (
     <>
@@ -45,95 +69,42 @@ function Project({ projectData, id, setCurrentSection }) {
         description={projectData.description}
       />
       <div
-        className="flex items-center justify-center h-full px-[36px] md:px-0"
+        className="flex items-center justify-center h-full px-[36px] md:px-0 tags_trigger"
         ref={ref}
       >
-        <div
-          className={
-            `flex flex-col gap-5` +
-            (id % 2 !== 0
-              ? " md:flex-row-reverse md:text-right"
-              : " md:flex-row")
-          }
-        >
-          <div className="block md:hidden">
-            <ul
-              className={
-                `list-none flex gap-x-[10px] text-[12px] text-[#494B50] uppercase` +
-                (id % 2 !== 0 ? " md:justify-end" : " md:justify-start")
-              }
-            >
-              {projectData.tags.map((tag, index) => (
-                <li key={index}>
-                  <span
-                    className={
-                      index !== projectData.tags.length - 1
-                        ? "pr-[10px] border-r-[1px] border-[#67696D]"
-                        : "pl-0 pr-0"
-                    }
-                  >
-                    {tag}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-[25px] md:text-[34px] text-[#2C2D30]">
-              {projectData.name}
-            </p>
-            {projectData.isComingSoon && (
-              <p className="text-[16px] text-[#67696D]">(coming soon)</p>
-            )}
-          </div>
-          <div
-            onClick={!projectData.isComingSoon ? handleOpenModal : null}
-            className={
-              `w-full md:w-[539px] sm:h-[198px] md:h-[336px] overflow-hidden relative` +
-              (!projectData.isComingSoon
-                ? " project-image-container cursor-pointer"
-                : " cursor-not-allowed")
-            }
-          >
-            <img
-              className="object-cover w-full h-full"
-              src={projectData.images[0].asset.url}
-              alt="Description"
+        {id % 2 !== 0 ? (
+          <div className="flex flex-col md:flex-row-reverse gap-5 md:text-right">
+            <ProjectImage
+              images={projectData.images}
+              isComingSoon={projectData.isComingSoon}
+              handleOpenModal={handleOpenModal}
             />
-            <p className="project-image-container-text text-[16px]">
-              See case study
-            </p>
+            <ProjectDetails
+              tags={projectData.tags}
+              name={projectData.name}
+              isComingSoon={projectData.isComingSoon}
+              shortBio={projectData.shortBio}
+              alignmentClass="hidden md:block"
+              tagsAlignmentClass="justify-end"
+            />
           </div>
-          <div className="flex flex-col justify-between md:w-[320px]">
-            <div className="hidden md:block">
-              <ul
-                className={
-                  `list-none flex gap-x-[10px] text-[12px] text-[#494B50] uppercase` +
-                  (id % 2 !== 0 ? " md:justify-end" : " md:justify-start")
-                }
-              >
-                {projectData.tags.map((tag, index) => (
-                  <li key={index}>
-                    <span
-                      className={
-                        index !== projectData.tags.length - 1
-                          ? "pr-[10px] border-r-[1px] border-[#67696D]"
-                          : "pl-0 pr-0"
-                      }
-                    >
-                      {tag}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-[34px] text-[#2C2D30]">{projectData.name}</p>
-              {projectData.isComingSoon && (
-                <p className="text-[16px] text-[#67696D]">(coming soon)</p>
-              )}
-            </div>
-            <p className="text-[14px] mt-4 text-[#494B50]">
-              {projectData.shortBio}
-            </p>
+        ) : (
+          <div className="flex flex-col md:flex-row gap-5 md:text-left">
+            <ProjectImage
+              images={projectData.images}
+              isComingSoon={projectData.isComingSoon}
+              handleOpenModal={handleOpenModal}
+            />
+            <ProjectDetails
+              tags={projectData.tags}
+              name={projectData.name}
+              isComingSoon={projectData.isComingSoon}
+              shortBio={projectData.shortBio}
+              alignmentClass="hidden md:block"
+              tagsAlignmentClass="justify-start"
+            />
           </div>
-        </div>
+        )}
       </div>
     </>
   )
