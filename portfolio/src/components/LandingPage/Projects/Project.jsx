@@ -41,23 +41,73 @@ function Project({ projectData, id, setCurrentSection }) {
 
   useEffect(() => {
     gsap.fromTo(
-      ".tags",
-      { y: 100, opacity: 0 },
+      `.tags-${id}`,
+      { y: "100%", opacity: 0 },
       {
         y: 0,
         opacity: 1,
         scrollTrigger: {
-          trigger: ".tags_trigger",
+          trigger: `.tags_trigger-${id}`,
           start: "top center+=100",
           end: "bottom center",
           toggleActions: "play none none none",
-          markers: true,
         },
-        duration: 1,
+        duration: 0.5,
         ease: "power3.out",
       }
     )
-  }, [])
+    gsap.fromTo(
+      `.name-${id}`,
+      { y: "100%", opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: `.tags_trigger-${id}`,
+          start: "top center+=100",
+          end: "bottom center",
+          toggleActions: "play none none none",
+        },
+        duration: 0.7,
+        ease: "power3.out",
+        delay: 0.4,
+      }
+    )
+    gsap.fromTo(
+      `.coming_soon-${id}`,
+      { y: "100%", opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: `.tags_trigger-${id}`,
+          start: "top center+=100",
+          end: "bottom center",
+          toggleActions: "play none none none",
+        },
+        duration: 0.7,
+        ease: "power3.out",
+        delay: 0.7,
+      }
+    )
+    gsap.fromTo(
+      `.short_bio-${id}`,
+      { y: "100%", opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: `.tags_trigger-${id}`,
+          start: "top center+=100",
+          end: "bottom center",
+          toggleActions: "play none none none",
+        },
+        duration: 0.5,
+        ease: "power3.out",
+        delay: 1,
+      }
+    )
+  }, [id])
 
   return (
     <>
@@ -69,7 +119,7 @@ function Project({ projectData, id, setCurrentSection }) {
         description={projectData.description}
       />
       <div
-        className="flex items-center justify-center h-full px-[36px] md:px-0 tags_trigger"
+        className={`flex items-center justify-center h-full px-[36px] md:px-0 tags_trigger-${id}`}
         ref={ref}
       >
         {id % 2 !== 0 ? (
@@ -84,8 +134,11 @@ function Project({ projectData, id, setCurrentSection }) {
               name={projectData.name}
               isComingSoon={projectData.isComingSoon}
               shortBio={projectData.shortBio}
-              alignmentClass="hidden md:block"
               tagsAlignmentClass="justify-end"
+              tagClass={`tags-${id}`}
+              nameClass={`name-${id}`}
+              shortBioClass={`short_bio-${id}`}
+              comingSoon={`coming_soon-${id}`}
             />
           </div>
         ) : (
@@ -100,8 +153,11 @@ function Project({ projectData, id, setCurrentSection }) {
               name={projectData.name}
               isComingSoon={projectData.isComingSoon}
               shortBio={projectData.shortBio}
-              alignmentClass="hidden md:block"
               tagsAlignmentClass="justify-start"
+              tagClass={`tags-${id}`}
+              nameClass={`name-${id}`}
+              shortBioClass={`short_bio-${id}`}
+              comingSoon={`coming_soon-${id}`}
             />
           </div>
         )}
