@@ -9,7 +9,7 @@ function InstagramPics({ images }) {
 
   const handleSwiperMove = () => {
     const swiper = swiperRef.current.swiper
-    const translateValue = swiper.translate * 0.3 // Adjust this value to change the speed difference
+    const translateValue = swiper.translate * 0.1 // Adjust this value to change the speed difference
     const parallaxEls = document.querySelectorAll(".parallax-bg")
     parallaxEls.forEach((el) => {
       el.style.transform = `translateX(${translateValue}px)`
