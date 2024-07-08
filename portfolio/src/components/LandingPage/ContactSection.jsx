@@ -67,12 +67,16 @@ function ContactSection() {
             <span className="mr-[20px]">spy on me here</span>
             <span className="inline-block">
               <a
+                target="_blank"
+                rel="noreferrer"
                 href="https://www.linkedin.com/in/karolina-hess-793399257/"
                 className="md:text-[16px] text-[14px] block girl-emoji-hover"
               >
                 (LinkedIn)
               </a>
               <a
+                target="_blank"
+                rel="noreferrer"
                 href="https://www.instagram.com/karo.dsgn"
                 className="md:text-[16px] text-[14px] block eyes-emoji-hover"
               >
@@ -84,7 +88,12 @@ function ContactSection() {
         <div className=" flex justify-between text-[12px] pt-[12px] border-t-[.5px] border-[#67696D] mx-[10px] sm:mx-[20px]">
           <p className="items-end text-[#DFE0E2]">
             Coded with love by{" "}
-            <a href="/portfolio" className="underline cursor-pointer">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://wdw-studio.com/"
+              className="underline cursor-pointer"
+            >
               WDW
             </a>
           </p>
