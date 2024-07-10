@@ -45,13 +45,13 @@ function ContactSection() {
     "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,..."
 
   return (
-    <div className="bg_color_animation_trigger">
+    <div className="bg_color_animation_trigger mt-[50px] md:mt-0">
       <InstagramSection />
       <div
         id="contact"
         className="md:px-[60px] pb-[60px] md:pt-[100px] pt-[60px]"
       >
-        <div className="flex justify-center h-fit py-[20vh] sm:py-0 sm:h-screen flex-col md:px-[10%] pl-[20px]">
+        <div className="flex justify-center h-fit py-[50vh] sm:py-0 sm:h-screen flex-col md:px-[10%] pl-[20px]">
           <p className=" text-[14px] uppercase">don't be shy</p>
           <p className=" md:text-[95px] text-[34px] mb-[20px]">
             Say hello
