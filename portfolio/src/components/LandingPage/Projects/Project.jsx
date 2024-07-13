@@ -73,23 +73,26 @@ function Project({ projectData, id, setCurrentSection }) {
         delay: 0.4,
       }
     )
-    gsap.fromTo(
-      `.coming_soon-${id}`,
-      { y: "100%", opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: `.tags_trigger-${id}`,
-          start: "top center+=100",
-          end: "bottom center",
-          toggleActions: "play none none none",
-        },
-        duration: 0.7,
-        ease: "power3.out",
-        delay: 0.7,
-      }
-    )
+    if (document.querySelector(`.coming_soon-${id}`)) {
+      gsap.fromTo(
+        `.coming_soon-${id}`,
+        { y: "100%", opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: `.tags_trigger-${id}`,
+            start: "top center+=100",
+            end: "bottom center",
+            toggleActions: "play none none none",
+          },
+          duration: 0.7,
+          ease: "power3.out",
+          delay: 0.7,
+        }
+      )
+    }
+
     gsap.fromTo(
       `.short_bio-${id}`,
       { y: "100%", opacity: 0 },
