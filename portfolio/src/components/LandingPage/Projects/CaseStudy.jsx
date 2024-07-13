@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react"
 import ScrollProgress from "./ScrollProgress"
+import gsap from "gsap"
 
 function CaseStudy({ show, onClose, name, images, description }) {
   const scrollContainerRef = useRef(null)
@@ -15,6 +16,33 @@ function CaseStudy({ show, onClose, name, images, description }) {
     return () => {
       document.body.style.overflowY = "auto"
       document.body.style.overflowX = "hidden"
+    }
+  }, [show])
+
+  useEffect(() => {
+    if (document.querySelector(".name")) {
+      gsap.fromTo(".name", { y: "100%" }, { y: 0, duration: 0.5, delay: 0.5 })
+    }
+    if (document.querySelector(".details")) {
+      gsap.fromTo(
+        ".details",
+        { y: "100%" },
+        { y: 0, duration: 0.5, delay: 0.8 }
+      )
+    }
+    if (document.querySelector(".image")) {
+      gsap.fromTo(
+        ".image",
+        { opacity: 0 },
+        { opacity: 1, duration: 1.2, delay: 0.9 }
+      )
+    }
+    if (document.querySelector(".scroll")) {
+      gsap.fromTo(
+        ".scroll",
+        { opacity: 0 },
+        { opacity: 1, duration: 1, delay: 0.9 }
+      )
     }
   }, [show])
 
@@ -56,27 +84,31 @@ function CaseStudy({ show, onClose, name, images, description }) {
         >
           Close
         </button>
-        <h2 className="text-[45px] mb-[40px]">{name}</h2>
-        <div className="overview flex w-full gap-[10px] justify-between mb-[60px]">
-          <div className="text-[14px] font-extrathin flex flex-col">
-            <h6 className="text-[#CBCBCB]">Project Type:</h6>
-            {description.type.map((type, index) => (
-              <p key={index}>{type}</p>
-            ))}
-          </div>
-          <div className="text-[14px] font-extrathin flex flex-col">
-            <h6 className="text-[#CBCBCB]">Stage:</h6>
-            <p>{description.stage}</p>
-          </div>
-          <div className="text-[14px] font-extrathin flex flex-col w-[150px]">
-            <h6 className="text-[#CBCBCB]">Deliverables:</h6>
-            {description.deliverables.map((deliverable, index) => (
-              <p key={index}>{deliverable}</p>
-            ))}
+        <div className="h-fit overflow-hidden mb-[40px]">
+          <h2 className="text-[45px]  box-border name">{name}</h2>
+        </div>
+        <div className="h-fit overflow-hidden box-border mb-[60px]">
+          <div className="overview flex w-full gap-[10px] justify-between  details">
+            <div className="text-[14px] font-extrathin flex flex-col">
+              <h6 className="text-[#CBCBCB]">Project Type:</h6>
+              {description.type.map((type, index) => (
+                <p key={index}>{type}</p>
+              ))}
+            </div>
+            <div className="text-[14px] font-extrathin flex flex-col">
+              <h6 className="text-[#CBCBCB]">Stage:</h6>
+              <p>{description.stage}</p>
+            </div>
+            <div className="text-[14px] font-extrathin flex flex-col w-[150px]">
+              <h6 className="text-[#CBCBCB]">Deliverables:</h6>
+              {description.deliverables.map((deliverable, index) => (
+                <p key={index}>{deliverable}</p>
+              ))}
+            </div>
           </div>
         </div>
         <div className="relative flex items-start">
-          <div className="fixed hidden lg:flex flex-col justify-center h-full w-[50px] none">
+          <div className="fixed hidden lg:flex flex-col justify-center h-full w-[50px] none scroll">
             <ScrollProgress scrollContainerRef={scrollContainerRef} />
           </div>
           <div className="flex-1">
@@ -86,7 +118,7 @@ function CaseStudy({ show, onClose, name, images, description }) {
                   key={index}
                   src={image.asset.url}
                   alt={`${index}`}
-                  className="w-full h-auto object-contain mt-[20px]"
+                  className="w-full h-auto object-contain mt-[20px] image"
                 />
               ))}
           </div>
