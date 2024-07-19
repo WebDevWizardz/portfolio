@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://karolinahess.com",
+  "homepage": "http://www.karolinahess.com/",
   "proxy": "https://lezkfw80.apicdn.sanity.io",
   "private": true,
   "dependencies": {
