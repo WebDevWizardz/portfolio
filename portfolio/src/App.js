@@ -6,7 +6,7 @@ import LandingPage from "./components/LandingPage/LandingPage"
 
 function App() {
   return (
-    <Router basename="/portfolio">
+    <Router basename="/">
       <div className="App">
         <Routes>
           <Route path="/" element={<LandingPage />} />
