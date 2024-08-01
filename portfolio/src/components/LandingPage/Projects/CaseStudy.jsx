@@ -80,7 +80,7 @@ function CaseStudy({ show, onClose, name, images, description }) {
       >
         <button
           onClick={handleClose}
-          className="relative w-full lg:w-fit flex justify-end lg:justify-start lg:top-0 mb-[60px] text-[14px] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer"
+          className="relative w-full lg:w-fit flex justify-end lg:justify-start lg:top-0 mb-[60px] text-[14px] text-bottom-line cursor-pointer"
         >
           Close
         </button>
@@ -126,7 +126,7 @@ function CaseStudy({ show, onClose, name, images, description }) {
         <div className="flex justify-between mt-[60px]">
           <button
             onClick={handleClose}
-            className="text-[14px] relative after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-[350ms] cursor-pointer"
+            className="text-[14px] relative text-bottom-line cursor-pointer"
           >
             Back to projects
           </button>
