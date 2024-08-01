@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import InstagramSection from "./Instagram/InstagramSection"
+import ProjectsSection from "./ProjectsSection"
 gsap.registerPlugin(ScrollTrigger)
 
 function ContactSection() {
@@ -17,6 +17,7 @@ function ContactSection() {
           start: "top center+=100",
           end: "bottom center",
           scrub: true,
+          markers: true,
         },
         ease: "power3.out",
       }
@@ -46,7 +47,7 @@ function ContactSection() {
 
   return (
     <div className="bg_color_animation_trigger mt-[50px] md:mt-0">
-      <InstagramSection />
+      <ProjectsSection />
       <div
         id="contact"
         className="md:px-[60px] pb-[60px] md:pt-[100px] pt-[60px]"

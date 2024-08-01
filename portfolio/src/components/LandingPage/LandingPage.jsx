@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Hero from "./Hero"
 import Navbar from "./Navbar"
-import ProjectsSection from "./ProjectsSection"
 import ContactSection from "./ContactSection"
 import Loader from "../Loader"
 
@@ -27,12 +26,7 @@ function LandingPage() {
       {isLoading && <Loader onComplete={handleLoaderComplete} />}
       <Navbar />
       <Hero />
-      <ProjectsSection />
-      {/* 
-      DISCLAIMER !
-      Inside contact section there need to be instagram carousel component to achieve footer animation on scroll with early color change.
-      I know ... life is brutal
-      */}
+      {/* DISCLAIMER | Inside ContactSection we have ProjectSection to achieve bg color change on scroll */}
       <ContactSection />
     </div>
   )

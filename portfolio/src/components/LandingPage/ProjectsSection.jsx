@@ -9,7 +9,7 @@ function ProjectsSection() {
   const { projects } = useSanity()
 
   return (
-    <div className="relative md:my-[175px] scrollbarBug">
+    <div className="relative md:mt-[175px] scrollbarBug">
       <ProjectsProgressBar
         sections={projects}
         currentSection={currentSection}
