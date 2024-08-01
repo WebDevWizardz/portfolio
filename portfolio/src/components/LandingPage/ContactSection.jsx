@@ -20,7 +20,6 @@ function ContactSection() {
           start: "top center+=100",
           end: "bottom center",
           scrub: true,
-          markers: true,
         },
         ease: "power3.out",
       }
