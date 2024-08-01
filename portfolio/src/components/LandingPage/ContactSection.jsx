@@ -95,7 +95,7 @@ function ContactSection() {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://wdw-studio.com/"
+              href="https://www.wdw-studio.com/"
               className="underline cursor-pointer"
             >
               WDW
