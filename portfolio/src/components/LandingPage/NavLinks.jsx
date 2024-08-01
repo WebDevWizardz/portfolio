@@ -4,7 +4,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
 gsap.registerPlugin(ScrollToPlugin)
 
-function NavLinks({ isMobile }) {
+function NavLinks({ isMobile, onLinkClick }) {
   return (
     <>
       <p
@@ -14,6 +14,7 @@ function NavLinks({ isMobile }) {
             duration: 1,
             scrollTo: { y: "#work", offsetY: 200 },
           })
+          onLinkClick()
         }}
       >
         {isMobile && <span className="mr-[35px] text-[10px]">01</span>}
@@ -44,6 +45,7 @@ function NavLinks({ isMobile }) {
             duration: 1.5,
             scrollTo: { y: "#contact", offsetY: -100 },
           })
+          onLinkClick()
         }}
       >
         {isMobile && <span className="mr-[35px] text-[10px]">04</span>}
