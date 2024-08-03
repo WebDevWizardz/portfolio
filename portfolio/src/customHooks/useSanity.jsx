@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react"
 import sanityClient from "../sanityClient"
+
 function useSanity() {
   const [projects, setProjects] = useState([])
+  const [reelData, setReelData] = useState([])
   useEffect(() => {
+    //Fetch projects data
     sanityClient
       .fetch(
         `*[_type == "project"] | order(_updatedAt desc) {
@@ -19,8 +22,21 @@ function useSanity() {
         setProjects(data)
       })
       .catch(console.error)
+
+    //Fetch reel data
+    sanityClient
+      .fetch(
+        `*[_type == "reel"] | order(_updatedAt desc) {
+                name,
+               "fileUrl": file.asset->url
+              }`
+      )
+      .then((data) => {
+        setReelData(data)
+      })
+      .catch(console.error)
   }, [])
-  return { projects }
+  return { projects, reelData }
 }
 
 export default useSanity

@@ -3,10 +3,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect } from "react"
 import React from "react"
 import Logo from "./Logo"
+import useSanity from "../../customHooks/useSanity"
+import useCheckDeviceType from "../../customHooks/useCheckDeviceType"
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Hero() {
+  const { reelData } = useSanity()
+  const isMobile = useCheckDeviceType()
+
+  console.log(reelData[1])
+
   useEffect(() => {
     gsap.to(".logo_animate", {
       scrollTrigger: {
@@ -22,6 +29,9 @@ function Hero() {
       justifyContent: "start",
     })
   }, [])
+  if (!reelData || reelData.length < 2) {
+    return <div>Loading...</div> // or handle this case appropriately
+  }
 
   return (
     <div
@@ -35,7 +45,7 @@ function Hero() {
         muted
       >
         <source
-          src={`${process.env.PUBLIC_URL}/assets/images/LandingPage/showreel.mp4`}
+          src={isMobile ? reelData[0].fileUrl : reelData[1].fileUrl}
           type="video/mp4"
         />
         Your browser does not support the video tag.
