@@ -4,6 +4,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/all"
 import ProjectDetails from "./ProjectDetails"
 import ProjectImage from "./ProjectImage"
+import { useGSAP } from "@gsap/react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -39,7 +40,7 @@ function Project({ projectData, id, setCurrentSection }) {
     }
   }, [id, setCurrentSection])
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.fromTo(
       `.tags-${id}`,
       { y: "100%", opacity: 0 },

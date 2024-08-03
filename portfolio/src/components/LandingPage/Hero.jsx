@@ -1,4 +1,5 @@
 import { gsap } from "gsap"
+import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect } from "react"
 import React from "react"
@@ -12,9 +13,13 @@ function Hero() {
   const { reelData } = useSanity()
   const isMobile = useCheckDeviceType()
 
-  console.log(reelData[1])
+  const mobileUrl =
+    "https://cdn.sanity.io/files/lezkfw80/production/ca4967eac9ec5812abc27d3b5b8fa6595018964c.mp4"
+  const desktopUrl =
+    "https://cdn.sanity.io/files/lezkfw80/production/b41f4d841093db2c651dd9aa66e3b0e5a1d4d995.mp4"
+  console.log(desktopUrl)
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.to(".logo_animate", {
       scrollTrigger: {
         scrub: 0.5,
@@ -29,9 +34,6 @@ function Hero() {
       justifyContent: "start",
     })
   }, [])
-  if (!reelData || reelData.length < 2) {
-    return <div>Loading...</div> // or handle this case appropriately
-  }
 
   return (
     <div
@@ -44,10 +46,7 @@ function Hero() {
         loop
         muted
       >
-        <source
-          src={isMobile ? reelData[0].fileUrl : reelData[1].fileUrl}
-          type="video/mp4"
-        />
+        <source src={isMobile ? mobileUrl : desktopUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="relative z-10 flex items-end justify-center h-full p-5 mix-blend-difference">
