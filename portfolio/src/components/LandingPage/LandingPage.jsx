@@ -3,6 +3,7 @@ import Hero from "./Hero"
 import Navbar from "./Navbar"
 import ContactSection from "./ContactSection"
 import Loader from "../Loader"
+import ProjectsSection from "./ProjectsSection"
 
 function LandingPage() {
   const [isLoading, setIsLoading] = useState(true)
@@ -26,7 +27,7 @@ function LandingPage() {
       {isLoading && <Loader onComplete={handleLoaderComplete} />}
       <Navbar />
       <Hero />
-      {/* DISCLAIMER | Inside ContactSection we have ProjectSection to achieve bg color change on scroll */}
+      <ProjectsSection />
       <ContactSection />
     </div>
   )

@@ -14,7 +14,10 @@ function ProjectsSection() {
         sections={projects}
         currentSection={currentSection}
       />
-      <div id="work" className="flex flex-col gap-y-[70px] md:gap-y-[30vh]">
+      <div
+        id="work"
+        className="flex flex-col gap-y-[70px] md:gap-y-[30vh] my-[100px]"
+      >
         {projects.map((project, index) => (
           <Project
             key={index}
