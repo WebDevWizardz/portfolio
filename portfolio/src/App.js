@@ -5,10 +5,7 @@ import LandingPage from "./components/LandingPage/LandingPage"
 
 function App() {
 
-  useEffect(() => {
-    window.history.scrollRestoration = 'manual'
-  }, [])
-
+  window.history.scrollRestoration = 'manual'
 
   return (
 
