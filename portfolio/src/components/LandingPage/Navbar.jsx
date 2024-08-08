@@ -4,13 +4,23 @@ import { gsap } from "gsap"
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isClosing, setIsClosing] = useState(false)
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-    document.body.style.overflowY = isOpen ? "auto" : "hidden"
+    if (isOpen) {
+      setIsClosing(true)
+      document.body.style.overflowY = "auto"
+      setTimeout(() => {
+        setIsOpen(false)
+        setIsClosing(false)
+      }, 500) // match the duration of your CSS animation
+    } else {
+      setIsOpen(true)
+      document.body.style.overflowY = "hidden"
+    }
   }
 
-  // slide in from top on page load
+  // Slide in from top on page load
   useEffect(() => {
     const animation = gsap.to(".nav", {
       y: "0",
@@ -42,7 +52,11 @@ function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="absolute top-0 left-0 px-[20px] flex flex-col justify-center sm:hidden gap-6 text-[45px] cursor-pointer bg-[#231D1C] w-full h-screen">
+          <div
+            className={`absolute top-0 left-0 px-[20px] flex flex-col justify-center sm:hidden gap-6 text-[45px] cursor-pointer bg-[#231D1C] w-full h-screen case_study ${
+              isClosing ? "closing" : ""
+            }`}
+          >
             <NavLinks isMobile={true} onLinkClick={toggleMenu} />
           </div>
         )}
