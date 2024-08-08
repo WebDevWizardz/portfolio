@@ -21,6 +21,7 @@ function Project({ projectData, id, setCurrentSection }) {
   }
 
   useEffect(() => {
+    const element = ref.current
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -30,12 +31,12 @@ function Project({ projectData, id, setCurrentSection }) {
       { rootMargin: "-200px 0px", threshold: 0.4 }
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    if (element) {
+      observer.observe(element)
     }
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (element) {
+        observer.unobserve(element)
       }
     }
   }, [id, setCurrentSection])
