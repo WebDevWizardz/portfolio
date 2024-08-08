@@ -1,7 +1,6 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { gsap } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import ProjectsSection from "./ProjectsSection"
 import { useGSAP } from "@gsap/react"
 
 gsap.registerPlugin(useGSAP)
@@ -66,7 +65,7 @@ function ContactSection() {
         <p className=" md:text-[25px] text-[14px] font-bold uppercase">or</p>
         <p className=" md:text-[95px] text-[34px] md:ml-[120px] md:leading-[3rem]">
           <span className="mr-[20px]">spy on me here</span>
-          <span className="inline-block">
+          <span className="block md:inline-block mt-5 md:mt-0">
             <a
               target="_blank"
               rel="noreferrer"
