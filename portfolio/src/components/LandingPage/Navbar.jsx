@@ -9,9 +9,10 @@ function Navbar() {
   const toggleMenu = () => {
     if (isOpen) {
       setIsClosing(true)
-      document.body.style.overflowY = "auto"
+
       setTimeout(() => {
         setIsOpen(false)
+        document.body.style.overflowY = "auto"
         setIsClosing(false)
       }, 500) // match the duration of your CSS animation
     } else {
