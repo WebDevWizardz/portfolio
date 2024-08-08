@@ -39,7 +39,7 @@ function NavLinks({ isMobile, onLinkClick }) {
             target="_blank"
             rel="noopener noreferrer"
             href={item.url}
-            className="text-bottom-line"
+            className={`${isMobile ? "" : "text-bottom-line"}`}
           >
             {isMobile && (
               <span className="mr-[35px] text-[10px]">{item.mobileLabel}</span>
@@ -49,7 +49,7 @@ function NavLinks({ isMobile, onLinkClick }) {
         ) : (
           <p
             key={index}
-            className="text-bottom-line"
+            className={`${isMobile ? "" : "text-bottom-line"}`}
             onClick={() =>
               handleScrollTo(item.target, item.offsetY, item.duration)
             }
