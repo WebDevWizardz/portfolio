@@ -7,22 +7,21 @@ function Navbar() {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
-
-    if (isOpen) {
-      document.body.style.overflowY = "auto"
-    } else {
-      document.body.style.overflowY = "hidden"
-    }
+    document.body.style.overflowY = isOpen ? "auto" : "hidden"
   }
 
-  //slide in form top on page load
+  // slide in from top on page load
   useEffect(() => {
-    gsap.to(".nav", {
+    const animation = gsap.to(".nav", {
       y: "0",
       duration: 1.5,
       ease: "power2.inOut",
       delay: 2.6,
     })
+
+    return () => {
+      animation.kill()
+    }
   }, [])
 
   return (
