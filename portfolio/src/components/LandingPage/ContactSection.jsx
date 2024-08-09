@@ -85,7 +85,7 @@ function ContactSection() {
           </span>
         </p>
       </div>
-      <div className=" flex justify-between text-[12px] py-[12px] border-t-[.5px] border-[#67696D] mx-[10px] sm:mx-[20px]">
+      <div className=" flex justify-between text-[12px] py-[24px] border-t-[.5px] border-[#67696D] mx-[10px] sm:mx-[20px]">
         <p className="items-end text-[#DFE0E2]">
           Coded with love by{" "}
           <a
