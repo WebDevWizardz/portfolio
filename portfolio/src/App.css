@@ -125,27 +125,29 @@ svg.logo {
 
 /* LOADER END */
 
-.text-bottom-line {
-  position: relative;
-}
+@media (min-width: 640px) {
+  .text-bottom-line {
+    position: relative;
+  }
 
-.text-bottom-line::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  mix-blend-mode: difference;
-  background-color: #fcfcfc;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
-}
+  .text-bottom-line::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    background-color: #fcfcfc;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  }
 
-.text-bottom-line:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  .text-bottom-line:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
 
 .mail-emoji-hover {
