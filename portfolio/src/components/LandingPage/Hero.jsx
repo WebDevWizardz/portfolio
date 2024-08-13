@@ -17,7 +17,7 @@ function Hero() {
   const videoParentRef = useRef(null)
   const [shouldUseImage, setShouldUseImage] = useState(false)
   const { reelData } = useSanity()
-  console.log(reelData)
+  console.warn(reelData)
   const reels = {}
   reelData.forEach((reel) => {
     reels[reel.name] = reel.fileUrl
@@ -43,7 +43,7 @@ function Hero() {
             if (promise && promise.then) {
               promise
                 .then(() => {
-                  console.log("Video is playing successfully.")
+                  console.warn("Video is playing successfully.")
                 })
                 .catch(() => {
                   videoParentRef.current.style.display = "none"
