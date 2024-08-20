@@ -57,9 +57,9 @@ function ContactSection() {
           Say hello
           <a
             href={`mailto:hesskarolina@gmail.com ?subject=Collaboration ${mailContent}`}
-            className="md:text-[18px] text-[14px] ml-[20px] mail-emoji-hover"
+            className="md:text-[18px] text-[14px] ml-[20px] mail-emoji-hover underline underline-offset-2"
           >
-            (Email)
+            Email
           </a>
         </p>
         <p className=" md:text-[25px] text-[14px] font-bold uppercase">or</p>
@@ -70,17 +70,17 @@ function ContactSection() {
               target="_blank"
               rel="noreferrer"
               href="https://www.linkedin.com/in/karolina-hess-793399257/"
-              className="md:text-[16px] text-[14px] block girl-emoji-hover"
+              className="md:text-[16px] text-[14px] block girl-emoji-hover underline underline-offset-2"
             >
-              (LinkedIn)
+              LinkedIn
             </a>
             <a
               target="_blank"
               rel="noreferrer"
               href="https://www.instagram.com/karo.dsgn"
-              className="md:text-[16px] text-[14px] block eyes-emoji-hover"
+              className="md:text-[16px] text-[14px] block eyes-emoji-hover underline underline-offset-2"
             >
-              (Instagram)
+              Instagram
             </a>
           </span>
         </p>
