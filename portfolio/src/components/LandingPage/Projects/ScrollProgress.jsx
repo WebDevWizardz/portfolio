@@ -28,7 +28,7 @@ const ScrollProgress = ({ scrollContainerRef }) => {
       <div className="relative h-full w-1 bg-gray-400 rounded-full mt-2 mb-2">
         <div
           className="absolute left-0 right-0 bg-gray-700 rounded-full"
-          style={{ height: `${scrollPercentage}%`, bottom: 0 }}
+          style={{ height: `${scrollPercentage}%`, top: 0 }}
         ></div>
       </div>
     </div>
