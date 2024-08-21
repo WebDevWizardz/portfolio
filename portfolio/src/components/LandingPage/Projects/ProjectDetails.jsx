@@ -40,11 +40,6 @@ function ProjectDetails({
             {name}
           </p>
         </div>
-        {isComingSoon && (
-          <p className={`text-[16px] text-[#67696D] ${comingSoon}`}>
-            (coming soon)
-          </p>
-        )}
       </div>
       <div className="h-fit overflow-hidden">
         <p

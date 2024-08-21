@@ -133,6 +133,7 @@ function Project({ projectData, id, setCurrentSection }) {
               images={projectData.images}
               isComingSoon={projectData.isComingSoon}
               handleOpenModal={handleOpenModal}
+              comingSoonClass={`coming_soon-${id}`}
             />
             <ProjectDetails
               tags={projectData.tags}
@@ -152,6 +153,7 @@ function Project({ projectData, id, setCurrentSection }) {
               images={projectData.images}
               isComingSoon={projectData.isComingSoon}
               handleOpenModal={handleOpenModal}
+              comingSoonClass={`coming_soon-${id}`}
             />
             <ProjectDetails
               tags={projectData.tags}
