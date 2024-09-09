@@ -19,7 +19,7 @@ function ProjectImage({
       <div
         className={
           isComingSoon
-            ? "h-full w-full absolute flex justify-center items-center z-50 backdrop-blur bg-black/50"
+            ? "h-full w-full absolute flex justify-center items-center z-10 backdrop-blur bg-black/50"
             : "hidden"
         }
       >
