@@ -59,7 +59,7 @@ function ContactSection() {
             href={`mailto:hesskarolina@gmail.com ?subject=Collaboration ${mailContent}`}
             className="md:text-[18px] text-[14px] ml-[20px] mail-emoji-hover underline underline-offset-2"
           >
-            Email
+            hesskarolina@gmail.com
           </a>
         </p>
         <p className=" md:text-[25px] text-[14px] font-bold uppercase">or</p>
