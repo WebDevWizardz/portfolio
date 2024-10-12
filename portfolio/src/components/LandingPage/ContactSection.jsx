@@ -1,10 +1,10 @@
-import React from "react"
-import { gsap } from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
+import React from "react";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP)
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 function ContactSection() {
   useGSAP(() => {
@@ -22,7 +22,7 @@ function ContactSection() {
         },
         ease: "power3.out",
       }
-    )
+    );
     gsap.fromTo(
       `#contact`,
       { color: "#2C2D30" },
@@ -38,13 +38,13 @@ function ContactSection() {
         ease: "power3.out",
         delay: 1,
       }
-    )
-  }, [])
+    );
+  }, []);
 
   // text-[#85878A]
 
   const mailContent =
-    "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,..."
+    "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,...";
 
   return (
     <div
@@ -90,11 +90,11 @@ function ContactSection() {
           Coded with love by{" "}
           <a
             target="_blank"
-            rel="noreferrer"
-            href="https://www.wdw-studio.com/"
+            rel="noopener noreferrer"
+            href="https://www.wedeliverweb.com/"
             className="underline cursor-pointer"
           >
-            WDW
+            We Deliver Web
           </a>
         </p>
         <p className="items-end text-[#DFE0E2]">
@@ -102,7 +102,7 @@ function ContactSection() {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default ContactSection
+export default ContactSection;
