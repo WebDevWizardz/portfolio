@@ -1,55 +1,55 @@
-import React from "react";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import React from "react"
+import { gsap } from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+import { useGSAP } from "@gsap/react"
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(ScrollTrigger)
 
 function ContactSection() {
-  useGSAP(() => {
-    gsap.fromTo(
-      `.bg_color_animation_trigger`,
-      { backgroundColor: "#FCFCFC", opacity: 1 },
-      {
-        backgroundColor: "#2C2D30",
-        opacity: 1,
-        scrollTrigger: {
-          trigger: `#contact`,
-          start: "top center+=100",
-          end: "bottom center",
-          scrub: true,
-        },
-        ease: "power3.out",
-      }
-    );
-    gsap.fromTo(
-      `#contact`,
-      { color: "#2C2D30" },
-      {
-        color: "#FCFCFC",
+  // useGSAP(() => {
+  //   gsap.fromTo(
+  //     `.bg_color_animation_trigger`,
+  //     { backgroundColor: "#FCFCFC", opacity: 1 },
+  //     {
+  //       backgroundColor: "#2C2D30",
+  //       opacity: 1,
+  //       scrollTrigger: {
+  //         trigger: `#contact`,
+  //         start: "top center+=100",
+  //         end: "bottom center",
+  //         scrub: true,
+  //       },
+  //       ease: "power3.out",
+  //     }
+  //   )
+  //   gsap.fromTo(
+  //     `#contact`,
+  //     { color: "#2C2D30" },
+  //     {
+  //       color: "#FCFCFC",
 
-        scrollTrigger: {
-          trigger: `#contact`,
-          start: "top center-=250",
-          end: "bottom center",
-          scrub: true,
-        },
-        ease: "power3.out",
-        delay: 1,
-      }
-    );
-  }, []);
+  //       scrollTrigger: {
+  //         trigger: `#contact`,
+  //         start: "top center-=250",
+  //         end: "bottom center",
+  //         scrub: true,
+  //       },
+  //       ease: "power3.out",
+  //       delay: 1,
+  //     }
+  //   );
+  // }, [])
 
   // text-[#85878A]
 
   const mailContent =
-    "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,...";
+    "&body=Hello Karolina, %0D%0A %0D%0A I'm reaching out because I'm  interested in collaborating with you on a design project. When are you available for a brief call or meeting to explore this opportunity in more detail %0D%0A %0D%0A Kindest,..."
 
   return (
     <div
       id="contact"
-      className="h-screen w-full bg_color_animation_trigger flex flex-col justify-between"
+      className="h-screen w-full bg_color_animation_trigger flex flex-col justify-between text-[#FCFCFC] bg-[#2C2D30]"
     >
       <div className="flex justify-center h-full flex-col md:px-[10%] pl-[20px]">
         <p className=" text-[14px] uppercase">don't be shy</p>
@@ -102,7 +102,7 @@ function ContactSection() {
         </p>
       </div>
     </div>
-  );
+  )
 }
 
-export default ContactSection;
+export default ContactSection

@@ -31,7 +31,8 @@ function App() {
   return (
     <div className="App">
       {isLoading && <Loader onComplete={handleLoaderComplete} />}
-      {!isLoading && <LandingPage />}
+      <LandingPage />
+
     </div>
   );
 }

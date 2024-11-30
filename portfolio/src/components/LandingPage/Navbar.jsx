@@ -26,7 +26,7 @@ function Navbar() {
       y: "0",
       duration: 1.5,
       ease: "power2.inOut",
-      delay: 1,
+      delay: 2.8,
     })
 
     return () => {

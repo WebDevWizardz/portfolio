@@ -101,7 +101,7 @@ function Hero() {
         />
       )}
 
-      <div className="relative z-10 flex items-end justify-center h-full p-5 mix-blend-difference">
+      <div className="relative z-10 flex items-end justify-center h-full p-5 mix-blend-difference bg-black">
         <div className="w-full absolute">
           <div className="logo-container">
             <div className="logo_animate relative z-[90]">

@@ -9,6 +9,11 @@
   }
 }
 
+.darkBody {
+  background-color: #2e2e2e;
+  color: #fcfcfc;
+}
+
 /* LANDING PAGE EASE IN */
 @keyframes easeIn {
   from {
