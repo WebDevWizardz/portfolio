@@ -1,20 +1,39 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
 gsap.registerPlugin(ScrollToPlugin)
 
 function Logo({ fill }) {
+  const [isAnimating, setIsAnimating] = useState(true)
+
   useEffect(() => {
+    // Blokuj scroll na początku
+    document.body.classList.add("no-scroll")
+
+    // Animacja liter
     gsap.to(".letter", {
       y: 0,
       opacity: 1,
       stagger: { each: 0.1, from: "end" },
       duration: 1,
       ease: "power3.out",
-      delay: 2.6,
+      delay: 1,
+      onComplete: () => {
+        // Po zakończeniu animacji usuń blokadę scrolla
+        setIsAnimating(false)
+      },
     })
   }, [])
+
+  useEffect(() => {
+    // Reaguj na zmiany stanu isAnimating
+    if (isAnimating) {
+      document.body.classList.add("no-scroll")
+    } else {
+      document.body.classList.remove("no-scroll")
+    }
+  }, [isAnimating]) // Efekt zostanie wykonany, gdy isAnimating się zmieni
   return (
     <svg
       className=" cursor-pointer relative z-[90]"

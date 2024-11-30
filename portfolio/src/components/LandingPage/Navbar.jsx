@@ -9,7 +9,6 @@ function Navbar() {
   const toggleMenu = () => {
     if (isOpen) {
       setIsClosing(true)
-
       setTimeout(() => {
         setIsOpen(false)
         document.body.style.overflowY = "auto"
@@ -27,7 +26,7 @@ function Navbar() {
       y: "0",
       duration: 1.5,
       ease: "power2.inOut",
-      delay: 2.6,
+      delay: 1,
     })
 
     return () => {

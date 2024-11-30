@@ -27,7 +27,7 @@
   padding-left: calc(100vw - 100%);
 }
 .heroSection {
-  animation: easeIn 1.5s ease-in-out;
+  animation: easeIn 0.3s ease-in-out;
   transition: all ease;
 }
 

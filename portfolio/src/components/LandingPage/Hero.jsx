@@ -53,7 +53,7 @@ function Hero() {
           }, 0)
         }
       }
-    }, 1000)
+    }, 100)
 
     gsap.to(".logo_animate", {
       scrollTrigger: {
